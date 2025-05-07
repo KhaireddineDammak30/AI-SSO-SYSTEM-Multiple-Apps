@@ -23,69 +23,86 @@ export default function Login() {
     setError('');
 
     try {
-      if (step === 0) {
-        // Step 0: Login with username/password
-        const res = await login(form.identifier.trim(), form.p, captcha);
-
-        if (res.qrData) {
-          // New MFA setup (QR code for first time)
-          setQr(res.qrData);
-          setStep(1);
-          setCaptcha(null);
-        } else if (res.mfaRequired) {
-          // Existing MFA, no QR needed
-          setStep(1);
-          setCaptcha(null);
-        } else if (res.token && res.role) {
-          // Direct login success
-          localStorage.setItem('token', res.token);
-          localStorage.setItem('role', res.role);
-          localStorage.setItem('origin', window.location.origin);
-
-          if (res.role === 'admin') {
-            const origin = window.location.origin;
-            window.location.href = `http://localhost:4001/admin-dashboard?token=${res.token}&role=${res.role}&origin=${encodeURIComponent(origin)}`;
+          if (step === 0) {
+            const res = await login(form.identifier.trim(), form.p, captcha);
+    
+            if (res.qrData) {
+              setQr(res.qrData);
+              setStep(1);
+              setCaptcha(null);
+              return;
+            }
+    
+            if (res.mfaRequired) {
+              setStep(1);
+              setCaptcha(null);
+              return;
+            }
+    
+            // Direct login
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('role',  res.role);
+            localStorage.setItem('origin', window.location.origin);
+    
+            if (res.role === 'admin') {
+              window.location.href =
+                `http://localhost:4001/admin-dashboard?token=${res.token}&role=${res.role}&origin=${encodeURIComponent(window.location.origin)}`;
+            } else {
+              navigate('/dashboard');
+            }
+    
           } else {
-            navigate('/dashboard');
+            const res = await verifyMfa(
+              form.identifier.trim(),
+              form.code.replace(/\s+/g, '')
+            );
+    
+            // MFA success
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('role',  res.role);
+            localStorage.setItem('origin', window.location.origin);
+    
+            if (res.role === 'admin') {
+              window.location.href =
+                `http://localhost:4001/admin-dashboard?token=${res.token}&role=${res.role}&origin=${encodeURIComponent(window.location.origin)}`;
+            } else {
+              navigate('/dashboard');
+            }
           }
-        } else {
-          throw new Error('❌ Invalid server response');
-        }
-      } else {
-        // Step 1: Verify MFA code (6-digit TOTP)
-        const res = await verifyMfa(
-          form.identifier.trim(),
-          form.code.replace(/\s+/g, '')
-        );
-
-        if (res.token && res.role) {
-          localStorage.setItem('token', res.token);
-          localStorage.setItem('role', res.role);
-          localStorage.setItem('origin', window.location.origin);
-
-          if (res.role === 'admin') {
-            const origin = window.location.origin;
-            window.location.href = `http://localhost:4001/admin-dashboard?token=${res.token}&role=${res.role}&origin=${encodeURIComponent(origin)}`;
-          } else {
-            navigate('/dashboard');
+    
+        } catch (err) {
+          // 429 ─ Too many wrong passwords in the last window
+          if (err.status === 429 && err.unlock) {
+            const when = new Date(err.unlock).toLocaleString();
+            setError(`⚠️ Too many failed attempts. Locked until ${when}`);
+            return;
           }
-        } else {
-          throw new Error('❌ Invalid server response after MFA');
+        
+          // 423 ─ Account is locked
+          if (err.status === 423) {
+            if (err.msg === 'admin-locked') {
+              // indefinitely locked by an admin – no timestamp
+              setError('🚫 Account has been locked by an administrator.');
+            } else if (err.unlock) {
+              // normal 30‑minute brute‑force lock‑out (unlock supplied)
+              const when = new Date(err.unlock).toLocaleString();
+              setError(`⏳ Account locked until ${when}`);
+            } else {
+              // fallback if server didn’t provide unlock
+              setError('⏳ Account is currently locked.');
+            }
+            return;
+          }
+        
+          // All other errors
+          setError(err.message || '❌ Login failed. Please try again.');
+        } finally {
+          setBusy(false);
         }
-      }
-    } catch (err) {
-      if (err.status === 423) {
-        const when = new Date(err.unlock).toLocaleTimeString();
-        setError(`⏳ Account locked until ${when}`);
-      } else if (err.status === 429) {
-        setError('⚠️ Too many failed attempts. Try again later.');
-      } else {
-        setError(err.message || '❌ Login failed. Please try again.');
-      }
-    } finally {
-      setBusy(false);
-    }
-  };
+        
+      };
+
+  
 
   return (
     <form onSubmit={handleSubmit} className="login-container">

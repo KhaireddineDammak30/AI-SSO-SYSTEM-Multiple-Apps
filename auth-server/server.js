@@ -40,6 +40,7 @@ db.connect()
 /* ────────────────────────────────────────────────────────────── */
 import express   from 'express';
 import cors      from 'cors';
+import fs from 'fs';
 import helmet    from 'helmet';
 import morgan    from 'morgan';
 import bcrypt    from 'bcryptjs';
@@ -122,83 +123,113 @@ function getAppName(origin) {
 }
 
 /* ------------------------------------------------------------------ */
-/* --- Middleware: brute-force / lock-out guard --------------------- */
+/* --- Middleware: brute‑force / lock‑out guard --------------------- */
 /* ------------------------------------------------------------------ */
 async function accountGuard(req, res, next) {
   try {
+    // 0️⃣ grab identifier (username/email)
     const identifier = (req.body.identifier || req.body.username || '')
                        .trim().toLowerCase();
-    if (!identifier) return next();          // nothing to check
+    if (!identifier) return next();  // nothing to do without an identifier
 
-    /* normalise client IP */
-    let clientIp = (req.headers['x-forwarded-for'] || req.ip).split(',')[0].trim();
-    if (clientIp === '::1' || clientIp.startsWith('::ffff:')) clientIp = '127.0.0.1';
-
-    /* 1️⃣  Is the account currently locked? */
-    const lockRow = await db.query(
-      `SELECT locked_until
-         FROM users
-        WHERE username ILIKE $1
-           OR email    ILIKE $1`,
-      [identifier]
-    );
-
-    const lockedUntil = lockRow.rows[0] ? Number(lockRow.rows[0].locked_until) : 0;
-    if (lockedUntil > Date.now()) {
-      const unlockAt = lockedUntil;
-      const lockAt   = unlockAt - LOCK_MS;
-
-      logEntry('LOCKOUT_HIT', {
-        identifier, ip: clientIp,
-        app: getAppName(req.headers.origin),
-        browser: req.headers['user-agent'],
-        lockAt:   new Date(lockAt).toISOString(),
-        unlockAt: new Date(unlockAt).toISOString()
-      });
-      return res.status(423).json({ msg: 'account-locked', unlock: unlockAt });
+    // 1️⃣ normalize client IP
+    let clientIp = (req.headers['x-forwarded-for'] || req.ip)
+                     .split(',')[0].trim();
+    if (clientIp === '::1' || clientIp.startsWith('::ffff:')) {
+      clientIp = '127.0.0.1';
     }
 
-    /* 2️⃣  Count recent failures */
+    // 2️⃣ check existing lock
+    const lockRow = await pool.query(
+      `SELECT locked_until FROM users
+         WHERE LOWER(username) = $1
+            OR LOWER(email)    = $1`,
+      [identifier]
+    );
+    const lockedUntil = lockRow.rows[0]
+      ? Number(lockRow.rows[0].locked_until)
+      : 0;
+
+      if (lockedUntil > Date.now()) {
+        // Is it the far‑future sentinel (admin lock) or a 30‑min brute‑force lock?
+        const isAdminLock = lockedUntil - Date.now() > LOCK_MS;
+      
+        if (isAdminLock) {
+          logEntry('ADMIN_LOCK_HIT', {
+            identifier,
+            ip:      clientIp,
+            app:     getAppName(req.headers.origin),
+            browser: req.headers['user-agent']
+          });
+          return res
+            .status(423)                       // 423 Locked
+            .json({ msg: 'admin-locked' });    // <‑‑ flag for the client
+        }
+      
+        // Otherwise it’s the normal 30‑minute lock‑out
+        const unlockAt = lockedUntil;
+        const lockAt   = unlockAt - LOCK_MS;
+        logEntry('LOCKOUT_HIT', {
+          identifier,
+          ip:      clientIp,
+          app:     getAppName(req.headers.origin),
+          browser: req.headers['user-agent'],
+          lockAt:  new Date(lockAt ).toISOString(),
+          unlockAt:new Date(unlockAt).toISOString()
+        });
+        return res
+          .status(423)
+          .json({ msg: 'account-locked', unlock: unlockAt });
+      }
+      
+
+    // 3️⃣ count recent failures
     const since = Date.now() - WINDOW_MS;
-    const { rows } = await db.query(
-      `SELECT COUNT(*) AS cnt
+    const { rows } = await pool.query(
+      `SELECT COUNT(*)::int AS cnt
          FROM login_failures
         WHERE identifier = $1
           AND ts > $2`,
       [identifier, since]
     );
-    const fails = Number(rows[0].cnt);
+    const fails = rows[0]?.cnt || 0;
 
-    /* 3️⃣  Exceeded max?  → lock account */
-    if (fails >= MAX_FAILS && lockRow.rows.length) {
+    // 4️⃣ if too many failures, set a new lock
+    if (fails >= MAX_FAILS) {
       const lockAt   = Date.now();
       const unlockAt = lockAt + LOCK_MS;
 
-      await db.query(
+      await pool.query(
         `UPDATE users
             SET locked_until = $1
-          WHERE username ILIKE $2
-             OR email    ILIKE $2`,
+          WHERE LOWER(username) = $2
+             OR LOWER(email)    = $2`,
         [unlockAt, identifier]
       );
 
       logEntry('LOCKOUT_SET', {
-        identifier, ip: clientIp,
-        app: getAppName(req.headers.origin),
-        browser: req.headers['user-agent'],
-        lockAt:   new Date(lockAt).toISOString(),
-        unlockAt: new Date(unlockAt).toISOString()
+        identifier,
+        ip:        clientIp,
+        app:       getAppName(req.headers.origin),
+        browser:   req.headers['user-agent'],
+        lockAt:    new Date(lockAt).toISOString(),
+        unlockAt:  new Date(unlockAt).toISOString()
       });
 
-      return res.status(429).json({ msg: 'too-many-attempts' });
+      return res
+        .status(429)                       // 429 Too Many Requests
+        .json({ msg: 'too-many-attempts', unlock: unlockAt });
     }
 
-    next();                                   // ✅  all clear
+    // ✅ all clear: proceed to password check
+    next();
+
   } catch (err) {
     console.error('accountGuard error:', err);
     res.status(500).json({ msg: 'internal-error' });
   }
 }
+
 
 /* ------------------------------------------------------------------ */
 /* --- Middleware: admin-only guard (unchanged) --------------------- */
@@ -277,13 +308,13 @@ async function signAndLog(uid, req) {
 const app = express();
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'http://localhost:4001'
+    'http://localhost:3000', // App1
+    'http://localhost:3001', // App2
+    'http://localhost:4001'  // Admin Panel
   ],
   credentials: true,
-  methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization'
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
 }));
 app.use(express.json());
 app.use(helmet());
@@ -428,8 +459,6 @@ app.post('/register', async (req, res) => {
 /* ------------------------------------------------------------------ */
 /* setup-profile                                                      */
 /* ------------------------------------------------------------------ */
-// auth-server/server.js
-
 app.post('/setup-profile', async (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ msg: 'No token provided' });
@@ -474,18 +503,17 @@ app.post('/setup-profile', async (req, res) => {
 
 
 /* ------------------------------------------------------------------ */
-/* 2a)  Login STEP-1 ─ identifier + password                          */
+/* 2a)  Login STEP‑1 ─ identifier + password                          */
 /* ------------------------------------------------------------------ */
 app.post('/login', accountGuard, async (req, res) => {
-  const origin    = req.headers.origin;
-  const appName   = getAppName(origin);
-  const browser   = req.headers['user-agent'];
-  const { identifier, password } = req.body || {};
+  const origin      = req.headers.origin;
+  const appName     = getAppName(origin);
+  const browser     = req.headers['user-agent'];
+  const { identifier = '', password = '' } = req.body || {};
 
   // 0️⃣ missing fields
   if (!identifier || !password) {
     logEntry('LOGIN_FAIL_MISSING_FIELDS', { identifier, origin, app: appName, browser });
-    console.log('[LOGIN ERROR] Missing identifier or password');
     return res.status(400).json({ msg: 'missing fields' });
   }
 
@@ -495,59 +523,98 @@ app.post('/login', accountGuard, async (req, res) => {
   // 1️⃣ fetch user
   const { rows } = await pool.query(
     `SELECT * FROM users
-      WHERE LOWER(username) = $1
-         OR LOWER(email)    = $1`,
+       WHERE LOWER(username) = $1
+          OR LOWER(email)    = $1`,
     [idClean]
   );
   const u = rows[0];
 
-  // 2️⃣ user not found
+  // 2️⃣ user not found → record failure & maybe lock
   if (!u) {
-    logEntry('LOGIN_FAIL_USER_NOT_FOUND', { identifier, origin, app: appName, browser });
-    console.log(`[LOGIN ERROR] No user for identifier="${idClean}"`);
-    await pool.query(
-      `INSERT INTO login_failures (identifier, ip, ts)
-       VALUES ($1,$2,$3)`,
-      [idClean, req.ip, Date.now()]
-    );
+    await recordFailureAndLock(idClean, req, 'LOGIN_FAIL_USER_NOT_FOUND');
     return res.status(401).json({ msg: '❌ User not found' });
   }
 
-  // 3️⃣ wrong password
-  const ok = await bcrypt.compare(password, u.hash);
-  if (!ok) {
-    logEntry('LOGIN_FAIL_WRONG_PASSWORD', { uid: u.id, identifier, origin, app: appName, browser });
-    console.log(`[LOGIN ERROR] Wrong password for user id=${u.id}`);
-    await pool.query(
-      `INSERT INTO login_failures (identifier, ip, ts)
-       VALUES ($1,$2,$3)`,
-      [idClean, req.ip, Date.now()]
-    );
+  // 3️⃣ still locked? (double‑check)
+  if (Number(u.locked_until) > Date.now()) {
+    const unlockAt = Number(u.locked_until);
+    return res.status(423).json({ msg: 'account-locked', unlock: unlockAt });
+  }
+
+  // 4️⃣ wrong password → record failure & maybe lock
+  const match = await bcrypt.compare(password, u.hash);
+  if (!match) {
+    await recordFailureAndLock(idClean, req, 'LOGIN_FAIL_WRONG_PASSWORD', u.id);
     return res.status(401).json({ msg: '❌ Wrong password' });
   }
 
-  // 4️⃣ success → clear failures & unlock
+  // 5️⃣ success → clear failures, clear expired lock only
   console.log(`[LOGIN] Credentials valid for user id=${u.id}`);
-  await pool.query('DELETE FROM login_failures WHERE identifier = $1', [idClean]);
-  await pool.query('UPDATE users SET locked_until = 0 WHERE id = $1', [u.id]);
+  await pool.query(`DELETE FROM login_failures WHERE identifier = $1`, [idClean]);
+  if (Number(u.locked_until) < Date.now()) {
+    await pool.query(`UPDATE users SET locked_until = 0 WHERE id = $1`, [u.id]);
+  }
 
-  // 5️⃣ MFA bootstrap
+  // 6️⃣ MFA bootstrap or request
   if (!u.mfasecret) {
     const secret = speakeasy.generateSecret({ issuer: ISSUER, name: u.username });
-    await pool.query('UPDATE users SET mfasecret = $1 WHERE id = $2',
-                     [secret.base32, u.id]);
-    logEntry('MFA_SETUP_INIT', {
-      uid: u.id, username: u.username, origin, app: appName, browser
-    });
+    await pool.query(`UPDATE users SET mfasecret = $1 WHERE id = $2`, [secret.base32, u.id]);
+    logEntry('MFA_SETUP_INIT', { uid: u.id, username: u.username, origin, app: appName, browser });
     const qrData = await qrcode.toDataURL(secret.otpauth_url);
-    console.log(`[LOGIN] MFA setup for user id=${u.id}; secret (base32)=${secret.base32}`);
     return res.json({ mfaRequired: true, qrData });
   }
 
-  // 6️⃣ otherwise just ask for the TOTP code
   console.log(`[LOGIN] MFA code requested for user id=${u.id}`);
   res.json({ mfaRequired: true });
 });
+
+/* ------------------------------------------------------------------ */
+/* helper: record a failed login, then lock if threshold reached      */
+/* ------------------------------------------------------------------ */
+async function recordFailureAndLock(identifier, req, eventType, uid = null) {
+  const browser = req.headers['user-agent'];
+  const origin  = req.headers.origin;
+  const appName = getAppName(origin);
+
+  // log the failure event
+  logEntry(eventType, { uid, identifier, origin, app: appName, browser });
+
+  // insert failure
+  await pool.query(
+    `INSERT INTO login_failures (identifier, ip, ts)
+     VALUES ($1, $2, $3)`,
+    [identifier, req.ip, Date.now()]
+  );
+
+  // count recent failures
+  const since = Date.now() - WINDOW_MS;
+  const { rows } = await pool.query(
+    `SELECT COUNT(*)::int AS cnt
+       FROM login_failures
+      WHERE identifier = $1
+        AND ts > $2`,
+    [identifier, since]
+  );
+  const fails = rows[0].cnt;
+
+  // if over the limit and we have a valid user id, lock the account
+  if (fails >= MAX_FAILS && uid) {
+    const lockAt   = Date.now();
+    const unlockAt = lockAt + LOCK_MS;
+    await pool.query(
+      `UPDATE users SET locked_until = $1 WHERE id = $2`,
+      [unlockAt, uid]
+    );
+    logEntry('LOCKOUT_SET', {
+      identifier,
+      uid,
+      app:       appName,
+      browser,
+      lockAt:    new Date(lockAt).toISOString(),
+      unlockAt:  new Date(unlockAt).toISOString()
+    });
+  }
+}
 
 
 /* ------------------------------------------------------------------ */
@@ -984,15 +1051,20 @@ app.get(
   }
 );
 
-// -------------------------------------------------------------------
-// ---  Admin Dashboard Routes  (PostgreSQL version)                ---
-// -------------------------------------------------------------------
+// ──────────────────────────────────────────────────────────────────
+// ── Admin Dashboard Routes (PostgreSQL + JWT.log)              ──
+// ──────────────────────────────────────────────────────────────────
 
-/**
- *  GET /admin/users   – list every account + first / last login
- *  (adminGuard has already validated the bearer-token)
- */
-app.get('/admin/users', adminGuard, async (_req, res) => {
+// 1) LIST USERS
+
+app.get('/admin/users', adminGuard, async (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  const token = req.headers.authorization?.split(' ')[1] || 'no-token';
+  fs.appendFileSync(
+    'JWT.log',
+    `${new Date().toISOString()} [GET /admin/users] token: ${token}\n`
+  );
+
   try {
     const { rows } = await pool.query(`
       SELECT
@@ -1010,65 +1082,55 @@ app.get('/admin/users', adminGuard, async (_req, res) => {
       GROUP BY u.id
     `);
 
-    const result = rows.map(u => ({
-      id:          u.id,
-      username:    u.username,
-      email:       u.email,
-      department:  u.department,
-      role:        u.role,
-      idNumber:    u.idNumber,
-      isLocked:    u.locked_until > Date.now(),
-      firstLogin:  u.firstLogin ? new Date(Number(u.firstLogin)).toLocaleString() : null,
-      lastLogin:   u.lastLogin  ? new Date(Number(u.lastLogin)).toLocaleString()  : null
+    const users = rows.map(u => ({
+      id:         u.id,
+      username:   u.username,
+      email:      u.email,
+      department: u.department,
+      role:       u.role,
+      idNumber:   u.idNumber,
+      locked_until: Number(u.locked_until),
+      isLocked:   Number(u.locked_until) > Date.now(),
+      firstLogin: u.firstLogin
+                    ? new Date(Number(u.firstLogin)).toLocaleString()
+                    : null,
+      lastLogin:  u.lastLogin
+                    ? new Date(Number(u.lastLogin)).toLocaleString()
+                    : null
     }));
 
-    res.json(result);
+    res.json(users);
 
   } catch (err) {
-    console.error('❌  Failed to fetch users:', err.message);
+    console.error('❌ Failed to fetch users:', err.message);
     res.status(500).json({ msg: 'failed-to-fetch-users' });
   }
 });
 
 
-/**
- *  PUT /admin/user/:id   – update a single account
- */
+// 2) UPDATE USER
 app.put('/admin/user/:id', adminGuard, async (req, res) => {
+  const userId   = req.params.id;
   const origin   = req.headers.origin;
   const appName  = getAppName(origin);
   const browser  = req.headers['user-agent'];
-  const userId   = req.params.id;
-
-  const {
-    username   = '',
-    email      = '',
-    department = '',
-    role       = '',
-    idNumber   = ''
-  } = req.body ?? {};
+  const { username = '', email = '', department = '', role = '', idNumber = '' } = req.body ?? {};
 
   try {
-    /* ---------- conflict checks ------------------------------------- */
-    const { rows: userRows } = await pool.query(
-      `SELECT 1
-         FROM users
-        WHERE username ILIKE $1
-          AND id <> $2`,
+    // Conflict checks
+    let q = await pool.query(
+      `SELECT 1 FROM users WHERE username ILIKE $1 AND id <> $2`,
       [username.trim(), userId]
     );
-    if (userRows.length) return res.status(409).json({ msg: 'username-taken' });
+    if (q.rows.length) return res.status(409).json({ msg: 'username-taken' });
 
-    const { rows: idRows } = await pool.query(
-      `SELECT 1
-         FROM users
-        WHERE idnumber = $1
-          AND id <> $2`,
+    q = await pool.query(
+      `SELECT 1 FROM users WHERE idnumber = $1 AND id <> $2`,
       [idNumber, userId]
     );
-    if (idRows.length) return res.status(409).json({ msg: 'idnumber-taken' });
+    if (q.rows.length) return res.status(409).json({ msg: 'idnumber-taken' });
 
-    /* ---------- perform update -------------------------------------- */
+    // Perform update
     await pool.query(
       `UPDATE users
           SET username   = $1,
@@ -1087,21 +1149,27 @@ app.put('/admin/user/:id', adminGuard, async (req, res) => {
       ]
     );
 
-    /* ---------- who made the change? -------------------------------- */
+    // Who performed it?
+    const token = req.headers.authorization?.split(' ')[1] || '';
     let actor = 'unknown';
-    const token = req.headers.authorization?.split(' ')[1];
     if (token) {
       try {
         const { sub } = jwt.verify(token, JWT_SECRET);
-        const adminRow = await pool.query(
+        const ar = await pool.query(
           `SELECT username FROM users WHERE id = $1`,
           [sub]
         );
-        actor = adminRow.rows[0]?.username ?? 'unknown';
-      } catch (err) {
-        console.error('❌  Failed to decode admin token:', err.message);
+        actor = ar.rows[0]?.username || 'unknown';
+      } catch (e) {
+        console.error('❌ Failed to decode admin token:', e.message);
       }
     }
+
+    // Log to JWT.log
+    fs.appendFileSync(
+      'JWT.log',
+      `${new Date().toISOString()} [PUT /admin/user/${userId}] token: ${token} actor: ${actor}\n`
+    );
 
     logEntry('ADMIN_UPDATE', {
       by:            actor,
@@ -1114,60 +1182,136 @@ app.put('/admin/user/:id', adminGuard, async (req, res) => {
     res.json({ msg: 'updated' });
 
   } catch (err) {
-    console.error('❌  Failed to update user:', err.message);
+    console.error('❌ Failed to update user:', err.message);
     res.status(500).json({ msg: 'update-failed' });
   }
 });
 
 
-/**
- *  DELETE /admin/user/:id   – remove account (+ events)
- */
+// 3) DELETE USER
 app.delete('/admin/user/:id', adminGuard, async (req, res) => {
-  const origin   = req.headers.origin;
-  const appName  = getAppName(origin);
-  const browser  = req.headers['user-agent'];
   const targetId = req.params.id;
+  const origin   = req.headers.origin;
+  const browser  = req.headers['user-agent'];
+  const token    = req.headers.authorization?.split(' ')[1] || '';
+
+  // Decode actor
+  let actor = 'unknown';
+  try {
+    const { sub } = jwt.verify(token, JWT_SECRET);
+    actor = (await one(
+      `SELECT username FROM users WHERE id = $1`,
+      [sub]
+    ))?.username || 'unknown';
+  } catch {}
+
+  // Log to JWT.log
+  fs.appendFileSync(
+    'JWT.log',
+    `${new Date().toISOString()} [DELETE /admin/user/${targetId}] token: ${token} actor: ${actor}\n`
+  );
 
   try {
-    // 1️⃣ fetch target’s username/role (for richer context)
-    const { username: targetUser, role: targetRole } = 
-      (await one(
-        `SELECT username, role FROM users WHERE id = $1`,
-        [targetId]
-      )) || { username: 'unknown', role: 'unknown' };
+    // Fetch target details
+    const targ = await one(
+      `SELECT username, role FROM users WHERE id = $1`,
+      [targetId]
+    ) || { username: 'unknown', role: 'unknown' };
 
-    // 2️⃣ actually delete
+    // Delete
     await pool.query(`DELETE FROM users  WHERE id = $1`, [targetId]);
     await pool.query(`DELETE FROM events WHERE uid = $1`, [targetId]);
 
-    // 3️⃣ who performed the deletion?
-    let actor = 'unknown';
-    const token = req.headers.authorization?.split(' ')[1];
-    if (token) {
-      try {
-        const { sub } = jwt.verify(token, JWT_SECRET);
-        actor = (await one(`SELECT username FROM users WHERE id=$1`, [sub]))?.username || 'unknown';
-      } catch {}
-    }
-
-    // 4️⃣ log the admin-delete event
     logEntry('ADMIN_DELETE', {
       by:           actor,
       targetId,
-      targetUser,
-      targetRole,
+      targetUser:   targ.username,
+      targetRole:   targ.role,
       origin,
-      app:          appName,
+      app:          getAppName(origin),
       browser
     });
 
     res.json({ msg: 'deleted' });
+
   } catch (err) {
-    console.error('❌  Failed to delete user:', err.message);
+    console.error('❌ Failed to delete user:', err.message);
     res.status(500).json({ msg: 'delete-failed' });
   }
 });
+
+
+// 4) LOCK / UNLOCK USER
+app.patch('/admin/user/:id/lock', adminGuard, async (req, res) => {
+  const userId  = req.params.id;
+  const origin  = req.headers.origin;
+  const browser = req.headers['user-agent'];
+  const token   = req.headers.authorization?.split(' ')[1] || '';
+
+  /* identify the admin performing the action */
+  let actor = 'unknown';
+  try {
+    const { sub } = jwt.verify(token, JWT_SECRET);
+    const { rows } = await pool.query(
+      'SELECT username FROM users WHERE id = $1',
+      [sub]
+    );
+    actor = rows[0]?.username || 'unknown';
+  } catch {}
+
+  /* JWT.log entry */
+  fs.appendFileSync(
+    'JWT.log',
+    `${new Date().toISOString()} [PATCH /admin/user/${userId}/lock] token: ${token} actor: ${actor}\n`
+  );
+
+  try {
+    /* fetch current lock state + identifier for login_failures */
+    const { rows } = await pool.query(
+      `SELECT username, email, locked_until
+         FROM users
+        WHERE id = $1`,
+      [userId]
+    );
+    if (!rows.length) return res.status(404).json({ msg: 'not-found' });
+
+    const { username, email, locked_until } = rows[0];
+    const currentlyLocked = Number(locked_until) > Date.now();
+
+    /* toggle */
+    const nextValue = currentlyLocked ? 0 : 253402300799000; // year‑9999
+
+    await pool.query(
+      'UPDATE users SET locked_until = $1 WHERE id = $2',
+      [nextValue, userId]
+    );
+
+    /* if we UN‑lock, clear login_failures so the account isn’t re‑locked */
+    if (currentlyLocked) {
+      await pool.query(
+        `DELETE FROM login_failures
+          WHERE identifier ILIKE $1
+             OR identifier ILIKE $2`,
+        [username.toLowerCase(), email.toLowerCase()]
+      );
+    }
+
+    /* structured audit log */
+    logEntry('ADMIN_LOCK_TOGGLE', {
+      by:       actor,
+      targetId: userId,
+      action:   currentlyLocked ? 'unlock' : 'lock',
+      app:      getAppName(origin),
+      browser
+    });
+
+    return res.sendStatus(204);              // success, no body
+  } catch (err) {
+    console.error('❌ Failed to toggle lock:', err);
+    return res.status(500).json({ msg: 'toggle-failed' });
+  }
+});
+
 
  
 // --------------------------------------------------------------------
