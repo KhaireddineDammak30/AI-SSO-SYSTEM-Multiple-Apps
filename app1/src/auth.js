@@ -1,6 +1,5 @@
-// src/auth.js
-
 import { jwtDecode } from 'jwt-decode';
+
 const API = process.env.REACT_APP_AUTH || 'http://localhost:4000';
 
 /**
@@ -29,13 +28,13 @@ export async function login(identifier, password) {
     throw err;
   }
 
-  return data; // either { mfaRequired, qrData } OR { token, role }
+  return data;
 }
 
 /**
  * Login Step 2: POST username + TOTP (MFA code).
  * Throws if not 200 OK.
- * Returns { token, role } on success and stores them in localStorage.
+ * Returns { token, role } and stores them.
  */
 export async function verifyMfa(identifier, code) {
   const r = await fetch(`${API}/verify-mfa`, {
@@ -63,11 +62,15 @@ export async function verifyMfa(identifier, code) {
     throw new Error('Invalid server response after MFA');
   }
 
-  localStorage.setItem('token', token);
-  localStorage.setItem('role', role);
-  window.dispatchEvent(new Event('sso-login'));
-
+  setToken(token, role);
   return { token, role };
+}
+
+/** Stores token and role */
+export function setToken(token, role = '') {
+  localStorage.setItem('token', token);
+  if (role) localStorage.setItem('role', role);
+  window.dispatchEvent(new Event('sso-login'));
 }
 
 /** Returns the raw token or null */

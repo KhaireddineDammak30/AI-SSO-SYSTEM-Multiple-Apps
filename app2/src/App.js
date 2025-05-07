@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import SSOListener from './components/SSOListener';
+import SetupProfile from './components/SetupProfile';
+
 
 /** Wraps protected UI with the SSOListener guard */
 function RequireAuth({ children }) {
@@ -27,6 +29,8 @@ export default function App() {
         {/* 2) Public routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/sso-callback" element={<SSOListener />} /> {/* 👈 Added this line */}
+        <Route path="/setup-profile" element={<SetupProfile />} />
 
         {/* 3) Protected route for App2's dashboard */}
         <Route

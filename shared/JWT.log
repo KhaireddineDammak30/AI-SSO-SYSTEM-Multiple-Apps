@@ -4047,3 +4047,2128 @@
   "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 }
 
+{
+  "timestamp": "2025-05-01T13:39:35.171Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:39:44.231Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:39:51.610Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:46:22.273Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 54,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDcxODIsImV4cCI6MTc0NjEwODk4MiwiaXNzIjoiQUktU1NPIn0.mT7lyseU8A0KQL5BWIF3JleY_96B6Uk7UlNJ4U0q9-U"
+}
+
+{
+  "timestamp": "2025-05-01T13:49:54.384Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:50:33.470Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 56,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDc0MzMsImV4cCI6MTc0NjEwOTIzMywiaXNzIjoiQUktU1NPIn0.p5gtKzBVZukXvf6DAWP26I0lxTj-UUloGDku280U6Mc"
+}
+
+{
+  "timestamp": "2025-05-01T13:54:43.859Z",
+  "context": "LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:54:56.012Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:55:07.069Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 59,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDc3MDcsImV4cCI6MTc0NjEwOTUwNywiaXNzIjoiQUktU1NPIn0.3Lj278ozj68US1b4G6qg9CMZ7Pf6JOlXOptMoCsUyOo"
+}
+
+{
+  "timestamp": "2025-05-01T13:58:23.130Z",
+  "context": "LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:58:43.677Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:59:39.099Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T13:59:46.563Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:09:36.165Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 62,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDg1NzYsImV4cCI6MTc0NjExMDM3NiwiaXNzIjoiQUktU1NPIn0.9JQFZO0l0ZZU239S_o7FerEOc3nC1f0pcMtm4gRz1tI"
+}
+
+{
+  "timestamp": "2025-05-01T14:11:11.861Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:11:19.316Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 64,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDg2NzksImV4cCI6MTc0NjExMDQ3OSwiaXNzIjoiQUktU1NPIn0.NQtF6LVTugZtQQYe_4rc3tEKt2UjfQRDFjuzv3aZrOo"
+}
+
+{
+  "timestamp": "2025-05-01T14:15:23.669Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:15:30.560Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 66,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDg5MzAsImV4cCI6MTc0NjExMDczMCwiaXNzIjoiQUktU1NPIn0.1HNHisdkcUc3j9-MIkj4Qozf5jMKdklKMFw06M1g-Pk"
+}
+
+{
+  "timestamp": "2025-05-01T14:18:59.444Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:19:08.201Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 68,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiMTExNTM5MzUiLCJpYXQiOjE3NDYxMDkxNDgsImV4cCI6MTc0NjExMDk0OCwiaXNzIjoiQUktU1NPIn0.zELPhV2K06ubmDQtu-QeJjlaOeyKQX1Tpt3S_pzJX4I"
+}
+
+{
+  "timestamp": "2025-05-01T14:21:59.190Z",
+  "context": "LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "11153935",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:22:04.115Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:22:20.121Z",
+  "context": "SIGN",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "role": "12345678",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 7,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTkxYzU3ZC0yZmQyLTRiZGMtYjExYS1hNGM2NWExZGMwZDAiLCJyb2xlIjoiMTIzNDU2NzgiLCJpYXQiOjE3NDYxMDkzNDAsImV4cCI6MTc0NjExMTE0MCwiaXNzIjoiQUktU1NPIn0.t9RajHkZhPBqMGGSfd3wxFoHk2dwlb5X8y8w1huWgKE"
+}
+
+{
+  "timestamp": "2025-05-01T14:23:14.830Z",
+  "context": "LOGOUT",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "role": "12345678",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:37:54.193Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:38:01.073Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 71,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMTAyODEsImV4cCI6MTc0NjExMjA4MSwiaXNzIjoiQUktU1NPIn0.ykNzboM6_QCoafubkUxaj_nupRRM0rW7mP0xxk5jeps"
+}
+
+{
+  "timestamp": "2025-05-01T14:39:40.371Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:39:51.022Z",
+  "context": "SIGN",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 10,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTkxYzU3ZC0yZmQyLTRiZGMtYjExYS1hNGM2NWExZGMwZDAiLCJyb2xlIjoiZW5naW5lZXIiLCJpYXQiOjE3NDYxMTAzOTEsImV4cCI6MTc0NjExMjE5MSwiaXNzIjoiQUktU1NPIn0.hZxmIGN_xLpzg93i9MOwjc_CZNtQx72n_IW61c0PU3A"
+}
+
+{
+  "timestamp": "2025-05-01T14:39:56.391Z",
+  "context": "LOGOUT",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:40:20.634Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:40:29.613Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 73,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMTA0MjksImV4cCI6MTc0NjExMjIyOSwiaXNzIjoiQUktU1NPIn0.H3GbmYkEVUeyp_OyPIIESvwx92z1vvnUwWnnIuRaTvA"
+}
+
+{
+  "timestamp": "2025-05-01T14:40:49.219Z",
+  "context": "ADMIN_LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:41:01.339Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:41:05.639Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T14:41:21.479Z",
+  "context": "SIGN",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "username": "aaa",
+  "role": "engineer",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 13,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTkxYzU3ZC0yZmQyLTRiZGMtYjExYS1hNGM2NWExZGMwZDAiLCJyb2xlIjoiZW5naW5lZXIiLCJpYXQiOjE3NDYxMTA0ODEsImV4cCI6MTc0NjExMjI4MSwiaXNzIjoiQUktU1NPIn0.OFGDFFvIcylP0MX62a4h5kIKhSpXWNqJPtnUIU10J8U"
+}
+
+{
+  "timestamp": "2025-05-01T17:44:58.466Z",
+  "context": "EMAIL_VERIFY",
+  "email": "dammak@gmail.com",
+  "result": "deliverable",
+  "reason": "accepted_email",
+  "disposable": false,
+  "role": false,
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:44:58.570Z",
+  "context": "REGISTER_SUCCESS",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "email": "dammak@gmail.com",
+  "department": "security",
+  "role": "technician",
+  "idNumber": "98512347",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:51:35.691Z",
+  "context": "LOGIN_FAIL_BAD_CREDS",
+  "identifier": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:54:14.626Z",
+  "context": "LOGIN_FAIL_BAD_CREDS",
+  "identifier": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:54:27.202Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:56:30.367Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:57:17.818Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:58:55.253Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T17:59:51.034Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:00:02.527Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:00:21.341Z",
+  "context": "SIGN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 1,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMGVmMzE1OC00ZjNlLTRmMmMtYWFlNy1mMDQxNzIyZDFjMzYiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyMjQyMSwiZXhwIjoxNzQ2MTI0MjIxLCJpc3MiOiJBSS1TU08ifQ.sD2VSF62RRjqXomMxsQLZlatFB9BAFo9gaYL2v4qwMs"
+}
+
+{
+  "timestamp": "2025-05-01T18:01:22.510Z",
+  "context": "SIGN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 3,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMGVmMzE1OC00ZjNlLTRmMmMtYWFlNy1mMDQxNzIyZDFjMzYiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyMjQ4MiwiZXhwIjoxNzQ2MTI0MjgyLCJpc3MiOiJBSS1TU08ifQ.XvsFRVNULe-nWsH6osjvXiY6tYE1eNHkjOYIvoSs75w"
+}
+
+{
+  "timestamp": "2025-05-01T18:05:05.869Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:05:17.312Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:05:28.701Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:05:42.052Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:05:50.109Z",
+  "context": "SIGN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 5,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMGVmMzE1OC00ZjNlLTRmMmMtYWFlNy1mMDQxNzIyZDFjMzYiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyMjc1MCwiZXhwIjoxNzQ2MTI0NTUwLCJpc3MiOiJBSS1TU08ifQ.6ZwR0nyln_NjnRmE78643qrgdhsway7vrMCwv-JXbJY"
+}
+
+{
+  "timestamp": "2025-05-01T18:09:43.993Z",
+  "context": "SIGN",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 7,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMGVmMzE1OC00ZjNlLTRmMmMtYWFlNy1mMDQxNzIyZDFjMzYiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyMjk4MywiZXhwIjoxNzQ2MTI0NzgzLCJpc3MiOiJBSS1TU08ifQ.ziZmsKTzC2QU_wCQyPwaIlHK6wFrDZWdpONkCxAMofo"
+}
+
+{
+  "timestamp": "2025-05-01T18:14:57.636Z",
+  "context": "EMAIL_VERIFY",
+  "email": "kairi@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:14:57.636Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairii",
+  "email": "kairi@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:20:28.882Z",
+  "context": "EMAIL_VERIFY",
+  "email": "kairi@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:20:28.882Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairii",
+  "email": "kairi@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:20:35.051Z",
+  "context": "EMAIL_VERIFY",
+  "email": "kairi@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:20:35.052Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairii",
+  "email": "kairi@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:22:26.541Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairidammak@gmail.com",
+  "result": "deliverable",
+  "reason": "accepted_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:22:26.621Z",
+  "context": "REGISTER_SUCCESS",
+  "uid": "bc385f11-a818-4c66-a24a-0aa9ae81d05f",
+  "username": "khairii",
+  "email": "khairidammak@gmail.com",
+  "department": "network",
+  "role": "manager",
+  "idNumber": "74196321",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:09.643Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairiidamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:09.644Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairiidamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:17.993Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairidamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:17.994Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairidamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:30.570Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:30.571Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:34.498Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:34.499Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:35.231Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:35.231Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:35.835Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:35.835Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.236Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.237Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.572Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.572Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.854Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khairi.damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:36.855Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khairi.damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:47.982Z",
+  "context": "EMAIL_VERIFY",
+  "email": "damak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:33:47.983Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "damak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:35:16.876Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:35:16.876Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:35:38.487Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:35:38.488Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:37:56.459Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:37:56.460Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:38:06.314Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:38:06.315Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:38:19.971Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:38:19.971Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:41:09.603Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:41:09.604Z",
+  "context": "REGISTER_FAIL_SUSPICIOUS_EMAIL",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "reason": "rejected_email",
+  "result": "undeliverable",
+  "disposable": false,
+  "role": false,
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:41:21.640Z",
+  "context": "EMAIL_VERIFY",
+  "email": "khaireddinedamak@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "free": true,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:41:21.722Z",
+  "context": "REGISTER_SUCCESS",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "email": "khaireddinedamak@gmail.com",
+  "department": "cloud",
+  "role": "manager",
+  "idNumber": "74812377",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:42:08.366Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:42:41.124Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:42:56.621Z",
+  "context": "SIGN",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "role": "manager",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 1,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjOTMzOTNmNC00YTM2LTRmNTctYjgzZC1lODVhZTVhNDJiMzAiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc0NjEyNDk3NiwiZXhwIjoxNzQ2MTI2Nzc2LCJpc3MiOiJBSS1TU08ifQ.0sEjeQFUdyQmTXP8ymQfEfrrNLyunnS2De0UWkKf6ik"
+}
+
+{
+  "timestamp": "2025-05-01T18:44:32.407Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T18:51:48.632Z",
+  "context": "SIGN",
+  "uid": "c93393f4-4a36-4f57-b83d-e85ae5a42b30",
+  "username": "khairiii",
+  "role": "manager",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 3,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjOTMzOTNmNC00YTM2LTRmNTctYjgzZC1lODVhZTVhNDJiMzAiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc0NjEyNTUwOCwiZXhwIjoxNzQ2MTI3MzA4LCJpc3MiOiJBSS1TU08ifQ.i79ZctfzENWGD0AXJCYhcmvtEVB95AHGQADD6v1ARnc"
+}
+
+{
+  "timestamp": "2025-05-01T19:01:41.305Z",
+  "context": "EMAIL_VERIFY",
+  "email": "testtest@gmail.com",
+  "result": "undeliverable",
+  "reason": "rejected_email",
+  "disposable": false,
+  "role": false,
+  "free": true,
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:01:41.390Z",
+  "context": "REGISTER_SUCCESS",
+  "uid": "12e983c3-3a85-431e-ab8d-acf4c0b3b019",
+  "username": "testtest",
+  "email": "testtest@gmail.com",
+  "department": "network",
+  "role": "technician",
+  "idNumber": "77784512",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:01:50.282Z",
+  "context": "MFA_SETUP_INIT",
+  "uid": "12e983c3-3a85-431e-ab8d-acf4c0b3b019",
+  "username": "testtest",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:02:06.275Z",
+  "context": "SIGN",
+  "uid": "12e983c3-3a85-431e-ab8d-acf4c0b3b019",
+  "username": "testtest",
+  "role": "technician",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 1,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMmU5ODNjMy0zYTg1LTQzMWUtYWI4ZC1hY2Y0YzBiM2IwMTkiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyNjEyNiwiZXhwIjoxNzQ2MTI3OTI2LCJpc3MiOiJBSS1TU08ifQ.foK05w8yib1dwgLZIT3oEpwbuYPFxfMwblKaFOjskWs"
+}
+
+{
+  "timestamp": "2025-05-01T19:08:57.302Z",
+  "context": "SIGN",
+  "uid": "12e983c3-3a85-431e-ab8d-acf4c0b3b019",
+  "username": "testtest",
+  "role": "technician",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 3,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMmU5ODNjMy0zYTg1LTQzMWUtYWI4ZC1hY2Y0YzBiM2IwMTkiLCJyb2xlIjoidGVjaG5pY2lhbiIsImlhdCI6MTc0NjEyNjUzNywiZXhwIjoxNzQ2MTI4MzM3LCJpc3MiOiJBSS1TU08ifQ.prIsZ4JuJAxnj36yc7A-MiH8dLbj041iW55ptKtA5m0"
+}
+
+{
+  "timestamp": "2025-05-01T19:09:02.852Z",
+  "context": "LOGOUT",
+  "uid": "12e983c3-3a85-431e-ab8d-acf4c0b3b019",
+  "username": "testtest",
+  "role": "technician",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:09:29.399Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 76,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMjY1NjksImV4cCI6MTc0NjEyODM2OSwiaXNzIjoiQUktU1NPIn0.41dWo8O9BiDYYNtRiddbvVOd5K8aJGzZ0VpbUEPzCMA"
+}
+
+{
+  "timestamp": "2025-05-01T19:30:26.296Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 78,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMjc4MjYsImV4cCI6MTc0NjEyOTYyNiwiaXNzIjoiQUktU1NPIn0.8d4TKVzf6FGer7igDb6oOmhKeycPQYlpvCwpTkVPRcU"
+}
+
+{
+  "timestamp": "2025-05-01T19:30:26.779Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-01T19:32:18.942Z",
+  "context": "TOTP_FAIL_BAD_TOKEN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:32:27.534Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 80,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMjc5NDcsImV4cCI6MTc0NjEyOTc0NywiaXNzIjoiQUktU1NPIn0.zuSfDIB_p8q24YRjGs7r3AKTe43gtjM_5EBQsR8QG6g"
+}
+
+{
+  "timestamp": "2025-05-01T19:32:27.950Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-01T19:32:44.929Z",
+  "context": "ADMIN_LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:36:22.012Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 83,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxMjgxODIsImV4cCI6MTc0NjEyOTk4MiwiaXNzIjoiQUktU1NPIn0.YSk-8KWBHezGuxesORRenXdWxf8Dg5f15Hi5TMs0zyk"
+}
+
+{
+  "timestamp": "2025-05-01T19:36:22.417Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-01T19:36:58.848Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "identifier": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:00.301Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "identifier": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:01.333Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "identifier": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:02.126Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "identifier": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:02.722Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "identifier": "aaa",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:03.349Z",
+  "context": "LOCKOUT_SET",
+  "identifier": "aaa",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "lockAt": "2025-05-01T19:37:03.347Z",
+  "unlockAt": "2025-05-01T19:52:03.347Z"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:04.732Z",
+  "context": "LOCKOUT_HIT",
+  "identifier": "aaa",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "lockAt": "2025-05-01T19:37:03.347Z",
+  "unlockAt": "2025-05-01T19:52:03.347Z"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:07.964Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-01T19:37:17.539Z",
+  "context": "ADMIN_UPDATE",
+  "by": "khaireddine",
+  "targetId": "0191c57d-2fd2-4bdc-b11a-a4c65a1dc0d0",
+  "updatedFields": {
+    "username": "aaaa",
+    "email": "aaa@gmail.com",
+    "department": "network",
+    "role": "engineer",
+    "idNumber": "12345678"
+  },
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T19:52:31.374Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "32398e2e-990b-4092-8a48-8d9351bb8056",
+  "targetUser": "khairi",
+  "targetRole": null,
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-01T23:07:14.770Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 85,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxNDA4MzQsImV4cCI6MTc0NjE0MjYzNCwiaXNzIjoiQUktU1NPIn0.3Nv0MvYV5ZcFlOMzTFFcp9SsNOdyDq_PnRb4E5ggDec"
+}
+
+{
+  "timestamp": "2025-05-01T23:07:15.438Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-01T23:07:35.579Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "810ca302-6925-4463-91ec-92a2dbd72ca7",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "user",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:33:40.589Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 87,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxODU2MjAsImV4cCI6MTc0NjE4NzQyMCwiaXNzIjoiQUktU1NPIn0.QUuzQLfKVUTecuzCbR14VZcEYSkSkGExUdfGGsjGLpw"
+}
+
+{
+  "timestamp": "2025-05-02T11:33:41.073Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-02T11:36:44.539Z",
+  "context": "PROFILE_FETCH",
+  "uid": "dc6f4e2d-afb3-470b-919e-ffcf0dda522a",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:36:44.548Z",
+  "context": "PROFILE_FETCH",
+  "uid": "dc6f4e2d-afb3-470b-919e-ffcf0dda522a",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:36:48.424Z",
+  "context": "LOGOUT",
+  "uid": "dc6f4e2d-afb3-470b-919e-ffcf0dda522a",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:37:04.432Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-02T11:37:14.729Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "dc6f4e2d-afb3-470b-919e-ffcf0dda522a",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "engineer",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:01.206Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:01.215Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:05.286Z",
+  "context": "PROFILE_UPDATE",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "updatedFields": {
+    "username": "Khaireddine Dammak",
+    "email": "khaireddine.dammak@ensi-uma.tn",
+    "department": "cloud",
+    "role": "engineer",
+    "idNumber": "99999999"
+  },
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:09.268Z",
+  "context": "PROFILE_UPDATE",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "updatedFields": {
+    "username": "Khaireddine Dammak",
+    "email": "khaireddine.dammak@ensi-uma.tn",
+    "department": "cloud",
+    "role": "engineer",
+    "idNumber": "99999999"
+  },
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:13.909Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:38.577Z",
+  "context": "LOGOUT",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:42.995Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:38:43.004Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:52:23.461Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "engineer",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:52:49.136Z",
+  "context": "LOGOUT",
+  "uid": "d5dd255e-dfbc-4ba8-a00c-e451f369538c",
+  "username": "unknown",
+  "role": "unknown",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:58:57.736Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:58:57.814Z",
+  "context": "REGISTER_GOOGLE",
+  "uid": "d26f63c2-34a3-4a42-a39c-befd25eceaa2",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "username": "Khaireddine Dammak",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T11:59:14.964Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d26f63c2-34a3-4a42-a39c-befd25eceaa2",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:59:14.974Z",
+  "context": "PROFILE_FETCH",
+  "uid": "d26f63c2-34a3-4a42-a39c-befd25eceaa2",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T11:59:37.640Z",
+  "context": "LOGOUT",
+  "uid": "d26f63c2-34a3-4a42-a39c-befd25eceaa2",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:00:36.489Z",
+  "context": "PROFILE_FETCH",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:4001"
+}
+
+{
+  "timestamp": "2025-05-02T12:00:45.370Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "d26f63c2-34a3-4a42-a39c-befd25eceaa2",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "engineer",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:02:21.119Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:02:21.185Z",
+  "context": "REGISTER_GOOGLE",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "username": "Khaireddine Dammak",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:02:26.901Z",
+  "context": "PROFILE_SETUP_COMPLETE",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "idNumber": "99999999",
+  "department": "cloud",
+  "role": "engineer",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:02:27.945Z",
+  "context": "PROFILE_FETCH",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T12:02:27.954Z",
+  "context": "PROFILE_FETCH",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "origin": "http://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-02T12:03:03.513Z",
+  "context": "LOGOUT",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:11:21.247Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:11:21.274Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:11:51.656Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 89,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxODc5MTEsImV4cCI6MTc0NjE4OTcxMSwiaXNzIjoiQUktU1NPIn0.LhsGND3kp77AoFOjE-7KDNRJrQh84RC0AZQnERjc8_k"
+}
+
+{
+  "timestamp": "2025-05-02T12:11:56.176Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "engineer",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:11:59.937Z",
+  "context": "LOGOUT",
+  "uid": "c09ac35e-dba0-46f4-83f3-08e3f189ae3e",
+  "username": "unknown",
+  "role": "unknown",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:17.347Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:17.405Z",
+  "context": "REGISTER_GOOGLE",
+  "uid": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "username": "Khaireddine Dammak",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:27.566Z",
+  "context": "PROFILE_SETUP_COMPLETE",
+  "uid": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "idNumber": "99999999",
+  "department": "cloud",
+  "role": "engineer",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:42.511Z",
+  "context": "LOGOUT",
+  "uid": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:48.633Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:48.687Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:12:56.218Z",
+  "context": "LOGOUT",
+  "uid": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:13:14.340Z",
+  "context": "ADMIN_DELETE",
+  "by": "khaireddine",
+  "targetId": "53c33763-bd8b-4af5-9c20-9fa040fbe92d",
+  "targetUser": "Khaireddine Dammak",
+  "targetRole": "engineer",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:22.512Z",
+  "context": "SIGN",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+  "loginCount": 91,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOWJhM2U0Yy02ZDNhLTRkNWItYTMyNS0yNTAwZWJhZjk4YjUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYxODg5NjIsImV4cCI6MTc0NjE5MDc2MiwiaXNzIjoiQUktU1NPIn0.fJ3MCPJfL2UBKI9exEtC1qZ7XootXQgodVQgeXy_3qQ"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:30.081Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:30.156Z",
+  "context": "REGISTER_GOOGLE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "username": "Khaireddine Dammak",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:36.894Z",
+  "context": "PROFILE_SETUP_COMPLETE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "idNumber": "99999999",
+  "department": "cloud",
+  "role": "engineer",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:40.488Z",
+  "context": "LOGOUT",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:45.239Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:45.240Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:51.833Z",
+  "context": "LOGOUT",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:29:57.625Z",
+  "context": "ADMIN_LOGOUT",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "http://localhost:4001",
+  "app": "http://localhost:4001",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:30:04.922Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:30:04.977Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:32:31.393Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:32:31.497Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app1",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:37:28.299Z",
+  "context": "OAUTH_LOGIN_INIT_GOOGLE",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app2",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:37:28.374Z",
+  "context": "LOGIN_GOOGLE",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "email": "khaireddine.dammak@ensi-uma.tn",
+  "app": "app2",
+  "ip": "::1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-02T12:37:31.790Z",
+  "context": "LOGOUT",
+  "uid": "c771f8de-a248-4333-a4a3-332602732888",
+  "username": "Khaireddine Dammak",
+  "role": "engineer",
+  "origin": "http://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+}
+

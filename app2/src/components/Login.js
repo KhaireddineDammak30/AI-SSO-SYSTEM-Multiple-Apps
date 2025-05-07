@@ -115,6 +115,14 @@ export default function Login() {
             {busy ? 'Signing in…' : 'Next'}
           </button>
 
+          <div className="oauth-buttons">
+            <p>or continue with</p>
+
+            <a href="http://localhost:4000/auth/google?app=app2" className="oauth-btn google">Login with Google</a>
+            <a href="http://localhost:4000/auth/github?app=app2" className="oauth-btn github">Login with GitHub</a>
+
+          </div>
+
           <div className="signup-link">
             Need an account? <Link to="/register">Sign up</Link>
           </div>
