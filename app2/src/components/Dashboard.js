@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { getToken, logout as clientLogout } from '../auth';
+import { useCallback, useEffect, useState } from 'react';
+import { getToken, logout as clientLogout, registerFingerprint } from '../auth';
 import { useNavigate } from 'react-router-dom';
 import '../Dashboard.css';
 
-const API = process.env.REACT_APP_AUTH || 'http://localhost:4000';
+const API = process.env.REACT_APP_AUTH || 'https://localhost:4000';
 
+// ✏️ Modal to edit user info
 function EditModal({ user, onClose, onSave }) {
   const [form, setForm] = useState({ ...user });
 
@@ -22,7 +23,7 @@ function EditModal({ user, onClose, onSave }) {
           </div>
         ))}
         <div>
-          <label>department</label>
+          <label>Department</label>
           <select value={form.department} onChange={handleChange('department')}>
             <option value="cloud">Cloud</option>
             <option value="network">Network</option>
@@ -31,7 +32,7 @@ function EditModal({ user, onClose, onSave }) {
           </select>
         </div>
         <div>
-          <label>role</label>
+          <label>Role</label>
           <select value={form.role} onChange={handleChange('role')}>
             <option value="head">Head of Department</option>
             <option value="manager">Manager</option>
@@ -48,6 +49,7 @@ function EditModal({ user, onClose, onSave }) {
   );
 }
 
+// 🧠 Main Dashboard component
 export default function Dashboard() {
   const [me, setMe] = useState(null);
   const [editing, setEditing] = useState(false);
@@ -55,27 +57,34 @@ export default function Dashboard() {
   const [messageType, setMessageType] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = getToken();
-    if (!token) return navigate('/login');
+  // 🔐 Load user profile from /me
+  const loadUser = useCallback(async () => {
+  const token = getToken();
+  if (!token) return navigate('/login');
 
-    fetch(`${API}/me`, {
+  try {
+    const res = await fetch(`${API}/me`, {
       headers: { Authorization: `Bearer ${token}` },
-    })
-      .then(r => {
-        if (!r.ok) {
-          clientLogout();
-          navigate('/login');
-        }
-        return r.json();
-      })
-      .then(setMe)
-      .catch(() => {
-        clientLogout();
-        navigate('/login');
-      });
-  }, [navigate]);
+    });
 
+    if (!res.ok) {
+      clientLogout();
+      return navigate('/login');
+    }
+
+    const user = await res.json();
+    setMe(user);
+  } catch (err) {
+    clientLogout();
+    navigate('/login');
+  }
+}, [navigate]); // ✅ only depends on navigate
+
+useEffect(() => {
+  loadUser();
+}, [loadUser]);
+
+  // 📢 UI message display helper
   const showMessage = (msg, type = 'success') => {
     setMessage(msg);
     setMessageType(type);
@@ -85,6 +94,7 @@ export default function Dashboard() {
     }, 2000);
   };
 
+  // 🚪 Handle logout
   const handleLogout = async () => {
     const token = getToken();
     if (token) {
@@ -97,6 +107,7 @@ export default function Dashboard() {
     navigate('/login');
   };
 
+  // 💾 Save profile edits
   const handleSave = (data) => {
     const token = getToken();
     fetch(`${API}/me`, {
@@ -122,30 +133,80 @@ export default function Dashboard() {
     });
   };
 
+  // 🖐️ Handle fingerprint registration
+  const handleFingerprintRegistration = async () => {
+    const token = getToken();
+    setMessage('');
+    setMessageType('');
+    try {
+      setMessage('🔒 Enrolling fingerprint… please confirm on your device');
+      await registerFingerprint(token, 'dashboard');
+      await loadUser(); // 🔄 refresh user data without reload
+      setMessage('🎉 Fingerprint saved and synced!');
+      setMessageType('success');
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 3000);
+    } catch (err) {
+      console.error(err);
+      const msg = err?.message || '';
+      if (msg.includes('timed out') || msg.includes('not allowed')) {
+        setMessage('🛑 Fingerprint registration was cancelled or blocked. Please try again.');
+      } else {
+        setMessage('❌ Fingerprint registration failed: ' + msg);
+      }
+      setMessageType('error');
+    }
+  };
+
   if (!me) return <>Loading…</>;
 
   return (
     <div className="dashboard-container">
       <button className="logout-button" onClick={handleLogout}>🚪 Logout</button>
 
+      {/* ✅ Message Banner */}
       {message && (
         <div className={`admin-message ${messageType === 'error' ? 'error' : 'success'}`}>
           {message}
         </div>
       )}
 
-      <h2>Welcome {me.username} 🎉 to <strong>App2</strong></h2>
+      <h2>Welcome {me.username} to <strong>App2 🎉</strong></h2>
+
+      {/* 👤 User Info Card */}
       <div className="dashboard-card">
-        <div><strong>Email:</strong> {me.email}</div>
-        <div><strong>Department:</strong> {me.department}</div>
-        <div><strong>Role:</strong> {me.role}</div>
-        <div><strong>ID Number:</strong> {me.idNumber}</div>
+        <div><strong>📧 Email:</strong> {me.email}</div>
+        <div><strong>🏢 Department:</strong> {me.department}</div>
+        <div><strong>🧑‍💼 Role:</strong> {me.role}</div>
+        <div><strong>🆔 ID Number:</strong> {me.idNumber}</div>
+        <div className="fingerprint-status">
+          <strong>🖐️ Fingerprint:</strong>{' '}
+          {me.fingerprint_registered ? (
+            <span className="registered">Registered ✅</span>
+          ) : (
+            <span className="not-registered">Not registered ❌</span>
+          )}
+        </div>
       </div>
 
+      {/* ✏️ Action Buttons */}
       <div className="dashboard-actions">
         <button className="update-button" onClick={() => setEditing(true)}>✏️ Update Info</button>
       </div>
 
+      {/* 🖐️ Fingerprint Button */}
+      {!me.fingerprint_registered && (
+        <button
+          className="register-fp-button"
+          onClick={handleFingerprintRegistration}
+        >
+          🖐️ Register Fingerprint
+        </button>
+      )}
+
+      {/* ✏️ Edit Modal */}
       {editing && (
         <EditModal
           user={me}

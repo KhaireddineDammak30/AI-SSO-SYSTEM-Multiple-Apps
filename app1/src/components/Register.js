@@ -1,10 +1,12 @@
 // src/components/Register.js
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// SSO + WebAuthn helpers
+import { setToken, registerFingerprint } from '../auth';
 import '../register.css';
 
-const API = process.env.REACT_APP_AUTH || 'http://localhost:4000';
+const API = process.env.REACT_APP_AUTH || 'https://localhost:4000';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ export default function Register() {
   const [department, setDepartment] = useState('cloud');
   const [role,       setRole]       = useState('engineer');
   const [idNumber,   setIdNumber]   = useState('');
+  const [registerFp, setRegisterFp] = useState(false);      // optional fingerprint
   const [error,      setError]      = useState('');
   const [message,    setMessage]    = useState('');
   const [busy,       setBusy]       = useState(false);
@@ -51,48 +54,62 @@ export default function Register() {
         })
       });
 
-      if (res.ok) {
-        // 3️⃣ Success
-        setMessage('✅ Account created! Redirecting to login...');
-        setTimeout(() => navigate('/login'), 1200);
-
-      } else if (res.status === 409) {
-        // 4️⃣ Conflict: username or ID number
-        const data = await res.json().catch(() => ({}));
-        if (data.msg === 'username-taken') {
-          setError('⚠️ Username already taken.');
-        } else if (data.msg === 'idnumber-taken') {
-          setError('⚠️ ID Number already in use.');
-        } else {
-          setError('⚠️ Conflict – please try again.');
-        }
-
-      } else if (res.status === 400) {
-        // 5️⃣ Email verification failure from Kickbox
-        const data   = await res.json().catch(() => ({}));
-        const reason = data.reason || 'unknown';
-        const msgMap = {
-          low_deliverability: '📬 This email seems unreliable or likely to bounce.',
-          invalid_domain:     '❌ The domain of this email address is not valid.',
-          no_connect:         '🔌 We couldn’t reach this email provider.',
-          rejected_email:     '🚫 This email was rejected by the mail server.',
-          invalid_email:      '⚠️ Please use a valid email address.',
-          disposable:         '⏳ Temporary email addresses are not allowed.',
-          role:               '📮 Role-based emails (like admin@) are not accepted.',
-          unknown:            '⚠️ This email looks suspicious.'
-        };
-        setError(msgMap[reason] || '⚠️ Please use a valid, personal email address.');
-
-      } else {
-        // 6️⃣ Other errors
-        setError(`❌ Registration failed (${res.status})`);
-      }
-    } catch (err) {
-      console.error(err);
-      setError(`❌ Cannot connect to auth-server at ${API}`);
-    } finally {
-      setBusy(false);
-    }
+      if (!res.ok) {
+              // ─── Error handling unchanged ───────────────────────
+              if (res.status === 409) {
+                const data = await res.json().catch(() => ({}));
+                if (data.msg === 'username-taken') {
+                  setError('⚠️ Username already taken.');
+                } else if (data.msg === 'idnumber-taken') {
+                  setError('⚠️ ID Number already in use.');
+                } else {
+                  setError('⚠️ Conflict – please try again.');
+                }
+              } else if (res.status === 400) {
+                const data   = await res.json().catch(() => ({}));
+                const reason = data.reason || 'unknown';
+                const msgMap = {
+                  low_deliverability: '📬 This email seems unreliable or likely to bounce.',
+                  invalid_domain:     '❌ The domain of this email address is not valid.',
+                  no_connect:         '🔌 We couldn’t reach this email provider.',
+                  rejected_email:     '🚫 This email was rejected by the mail server.',
+                  invalid_email:      '⚠️ Please use a valid email address.',
+                  disposable:         '⏳ Temporary email addresses are not allowed.',
+                  role:               '📮 Role-based emails (like admin@) are not accepted.',
+                  unknown:            '⚠️ This email looks suspicious.'
+                };
+                setError(msgMap[reason] || '⚠️ Please use a valid, personal email address.');
+              } else {
+                setError(`❌ Registration failed (${res.status})`);
+              }
+              return;
+            }
+      
+            // ─── SUCCESS: parse { token, role } ────────────────────
+            const { token, role: userRole } = await res.json();
+            setToken(token, userRole);
+      
+            if (registerFp) {
+              try {
+                setMessage('🔒 Enrolling fingerprint… please confirm on your device');
+                await registerFingerprint(token, 'register');
+                setMessage('🎉 Fingerprint saved! Redirection…');
+              } catch (err) {
+                console.error(err);
+                setError('⚠️ Fingerprint registration failed: ' + err.message);
+              }
+            } else {
+              // ─── no fingerprint → go to login ───────────────────
+              setMessage('✅ Account created! Redirecting to login…');
+            }
+            // ─── Final redirect after a short delay ────────────────
+            setTimeout(() => navigate('/login'), 1200);
+          } catch (err) {
+            console.error(err);
+            setError(`❌ Cannot connect to auth-server at ${API}`);
+          } finally {
+            setBusy(false);
+          }
   };
 
   return (
@@ -135,8 +152,6 @@ export default function Register() {
         placeholder="ID Number (8 digits)"
         value={idNumber}
         onChange={e => setIdNumber(e.target.value)}
-        // keep the pattern so mobile browsers hint the format,
-        // but it won't block your handleSubmit
         pattern="\d{8}"
         required
       />
@@ -160,12 +175,17 @@ export default function Register() {
           <option value="technician">Technician</option>
         </select>
       </label>
+      {/* Optional fingerprint registration */}
+      <label className="fp-register">
+        <input
+          type="checkbox"
+          checked={registerFp}
+          onChange={e => setRegisterFp(e.target.checked)}
+        />
+        Register phone fingerprint now
+      </label>
 
-      <button
-        type="submit"
-        disabled={busy}
-        className="register-button"
-      >
+      <button type="submit" disabled={busy} className="register-button">
         {busy ? 'Creating…' : 'Create Account'}
       </button>
 

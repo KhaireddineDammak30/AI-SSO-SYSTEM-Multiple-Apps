@@ -52,7 +52,7 @@
   }
   
   .success {
-    color: green;
+    color: rgb(0, 128, 0);
     font-size: 0.9rem;
     text-align: center;
     min-height: 24px;
@@ -72,3 +72,29 @@
     text-decoration: underline;
   }
   
+  .fp-register {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .fp-register input[type="checkbox"] {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.5em;
+    accent-color:  #45a049;
+  }
+ 
+  .fp-register span {
+    /* darker, bolder text */
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;   /* Tailwind’s gray-800 */
+    line-height: 1.2;
+  }
+  
+  /* optional hover effect */
+  .fp-register:hover span {
+    color: #047857;   /* Tailwind’s emerald-700 */
+  }

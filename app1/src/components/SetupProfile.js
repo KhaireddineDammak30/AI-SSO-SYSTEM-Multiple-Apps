@@ -1,7 +1,10 @@
+// src/components/SetupProfile.js
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { getToken } from '../auth';
+import { getToken, registerFingerprint } from '../auth';
 import '../register.css'; // reuse styles from Register
+
+const API = process.env.REACT_APP_AUTH || 'https://localhost:4000';
 
 export default function SetupProfile() {
   const navigate = useNavigate();
@@ -10,9 +13,14 @@ export default function SetupProfile() {
   const [idNumber, setIdNumber]     = useState('');
   const [department, setDepartment] = useState('cloud');
   const [role, setRole]             = useState('engineer');
+
+  const [registerFp, setRegisterFp] = useState(false);
+  const [fpMsg,      setFpMsg]      = useState('');
+
   const [error, setError]           = useState('');
   const [message, setMessage]       = useState('');
   const [busy, setBusy]             = useState(false);
+
 
   useEffect(() => {
     const token = params.get('token');
@@ -22,7 +30,7 @@ export default function SetupProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setMessage('');
+    // setMessage('');
 
     // Validate ID number
     if (!/^\d{8}$/.test(idNumber)) {
@@ -31,29 +39,52 @@ export default function SetupProfile() {
     }
 
     setBusy(true);
+    const token = getToken();
+
     try {
-      const res = await fetch('http://localhost:4000/setup-profile', {
-        method: 'POST',
+      // 2️⃣ save profile
+      const res = await fetch(`${API}/setup-profile`, {
+        method:  'POST',
         headers: {
-          'Authorization': 'Bearer ' + getToken(),
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ idNumber, department, role })
       });
 
-      if (res.ok) {
-        setMessage('✅ Profile completed! Redirecting...');
-        setTimeout(() => navigate('/dashboard'), 1000);
-      } else if (res.status === 409) {
-        const data = await res.json().catch(() => ({}));
-        if (data.msg === 'idnumber-taken') {
-          setError('⚠️ ID Number already in use.');
+      if (!res.ok) {
+        // conflict or other error
+        if (res.status === 409) {
+          const data = await res.json().catch(() => ({}));
+          setError(data.msg === 'idnumber-taken'
+            ? '⚠️ ID Number already in use.'
+            : '⚠️ Conflict – please try again.');
         } else {
-          setError('⚠️ Conflict – please try again.');
+          setError('❌ Failed to update profile.');
+        }
+        return;
+      }
+
+      // 3️⃣ profile saved!
+      if (registerFp) {
+        // 4️⃣ user opted in → enroll fingerprint
+        setMessage('✅ Profile saved! Enrolling fingerprint…');
+        try {
+          setFpMsg('🔒 Please confirm on your device…');
+          await registerFingerprint(token);
+          setFpMsg('🎉 Fingerprint enrolled! Redirecting to dashboard…');
+        } catch (err) {
+          console.error(err);
+          setError('⚠️ Fingerprint enrollment failed: ' + err.message);
         }
       } else {
-        setError('❌ Failed to update profile.');
+        // no fingerprint: finish up
+        setMessage('✅ Profile completed! Redirecting to dashboard…');
       }
+
+      // 5️⃣ final redirect
+      setTimeout(() => navigate('/dashboard'), 1200);
+
     } catch (err) {
       console.error(err);
       setError('❌ Connection error');
@@ -95,12 +126,29 @@ export default function SetupProfile() {
         </select>
       </label>
 
-      <button type="submit" disabled={busy} className="register-button">
+      {/* ─── Optional fingerprint registration toggle ─────────── */}
+      <label className="fp-register">
+        <input
+          type="checkbox"
+          checked={registerFp}
+          onChange={e => setRegisterFp(e.target.checked)}
+        />
+        <span>Register phone fingerprint now</span>
+      </label>
+      {/* {fpMsg && <div className="success">{fpMsg}</div>} */}
+      {/* Submit button */}
+      <button
+        type="submit"
+        disabled={busy}
+        className="register-button"
+      >
         {busy ? 'Submitting…' : 'Finish Setup'}
       </button>
 
+      {/* Feedback messages */}
       {error   && <div className="error">{error}</div>}
       {message && <div className="success">{message}</div>}
+      {fpMsg   && <div className="success">{fpMsg}</div>}
     </form>
   );
 }

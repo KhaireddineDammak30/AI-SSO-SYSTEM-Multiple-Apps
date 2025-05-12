@@ -144,3 +144,35 @@
     color: white;
   }
   
+  .update-button {
+  background-color: #3498db; /* Default blue for general buttons */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.update-button:hover {
+  background-color: #2980b9;
+}
+
+.register-fp-button {
+  background-color: #9b59b6; /* Vibrant purple */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.register-fp-button:hover {
+  background-color: #8e44ad; /* Slightly darker on hover */
+}

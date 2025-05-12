@@ -232,3 +232,49 @@
   background-color: #fcecec;
   color: #c0392b;
 }
+
+.chart-card {
+  background-color: #ffffff;
+  border-radius: 12px;              /* coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  flex: 1 1 300px;                  /* largeur mini 300 px, s’adapte */
+  min-width: 300px;
+  height: 260px;                    /* même hauteur pour toutes */
+  display: flex;                 /* NEW */
+  flex-direction: column;        /* empile titre puis graphique */
+  align-items: center;           /* centre horizontal */
+  justify-content: center; 
+}
+
+/* titre au-dessus de chaque graphique */
+.chart-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;           
+}
+
+/* texte du tooltip Recharts un peu plus petit */
+.recharts-default-tooltip {
+  font-size: 0.875rem;
+}
+
+
+.fingerprint-cell {
+  /* display: grid; */
+  place-items: center;      
+  padding: 12px 14px;       
+}
+
+/* optional: adjust emoji size */
+.fingerprint-cell .fp-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.last-refresh {
+  font-size: 0.85rem;
+  color: #6b7280; /* Tailwind's gray-500 */
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
