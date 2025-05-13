@@ -278,3 +278,132 @@
   margin-top: -12px;
   margin-bottom: 20px;
 }
+
+
+/* ───────── AI AGENT MANAGEMENT SECTION ───────── */
+.agent-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 48px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.agent-section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #6d28d9; /* purple */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agent-form-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.agent-form-row input,
+.agent-form-row textarea {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  flex: 1;
+  min-width: 200px;
+  height: 42px;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.3;
+}
+
+.agent-form-row input:focus,
+.agent-form-row textarea:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.5);
+}
+
+.agent-form-row textarea {
+  resize: none;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Create + Delete button shared styling */
+.agent-form-row button,
+.agent-item .delete-button {
+  background-color: #ede9fe;
+  color: #6d28d9;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 42px;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
+
+.agent-form-row button:hover,
+.agent-item .delete-button:hover {
+  background-color: #c4b5fd;
+}
+
+.agent-list {
+  margin-top: 2rem;
+}
+
+.agent-item {
+  display: flex;
+  justify-content: space-between; /* ensures alignment */
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 1rem;
+}
+
+.agent-icon {
+  font-size: 1.6rem;
+  margin-top: 4px;
+}
+
+.agent-details {
+  flex-grow: 1;
+}
+
+.agent-description {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.agent-prompt {
+  background-color: #f3f4f6;
+  padding: 14px;
+  margin-top: 4px;
+  border-left: 4px solid #a78bfa;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 6px;
+  max-width: 100%;
+}
+.agent-item:hover {
+  background-color: #f4f3ff;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(109, 40, 217, 0.08); /* subtle purple glow */
+}
+
+.agent-icon:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s ease;
+}

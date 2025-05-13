@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { getToken, logout as clientLogout, registerFingerprint } from '../auth';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../Dashboard.css';
 
 const API = process.env.REACT_APP_AUTH || 'https://localhost:4000';
@@ -54,8 +55,17 @@ export default function Dashboard() {
   const [me, setMe] = useState(null);
   const [editing, setEditing] = useState(false);
   const [message, setMessage] = useState('');
+
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chat, setChat] = useState([]);
+  const chatBottomRef = useRef(null);
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const [messageType, setMessageType] = useState('');
   const navigate = useNavigate();
+
+  
 
   // 🔐 Load user profile from /me
   const loadUser = useCallback(async () => {
@@ -83,6 +93,12 @@ export default function Dashboard() {
 useEffect(() => {
   loadUser();
 }, [loadUser]);
+useEffect(() => {
+  if (chatBottomRef.current) {
+    chatBottomRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [chat]);
+
 
   // 📢 UI message display helper
   const showMessage = (msg, type = 'success') => {
@@ -160,10 +176,45 @@ useEffect(() => {
     }
   };
 
+  // 💬 Send user input to department-based AI agent, receive response, and update chat history
+  const handleSend = async () => {
+    if (!input.trim()) return;
+
+    const message = input;
+    const userTime = new Date().toLocaleTimeString();
+
+    // Show user message immediately
+    setChat(prev => [...prev, { role: 'user', content: message, time: userTime }]);
+    setInput('');
+    setLoading(true);
+
+    try {
+      const res = await axios.post('https://localhost:5000/agent/ask', {
+        userId: me.id,
+        department: me.department?.toLowerCase() || 'general',
+        prompt: message
+      });
+
+      const agentTime = new Date().toLocaleTimeString();
+
+      // Append agent response
+      setChat(prev => [...prev, { role: 'agent', content: res.data.answer, time: agentTime }]);
+    } catch (err) {
+      const errorTime = new Date().toLocaleTimeString();
+
+      setChat(prev => [
+        ...prev,
+        { role: 'agent', content: '⚠️ Error: could not contact AI agent.', time: errorTime }
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
   if (!me) return <>Loading…</>;
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-wrapper">
       <button className="logout-button" onClick={handleLogout}>🚪 Logout</button>
 
       {/* ✅ Message Banner */}
@@ -173,38 +224,31 @@ useEffect(() => {
         </div>
       )}
 
-      <h2>Welcome {me.username} to <strong>App1 🎉</strong></h2>
+      <h1 className="dashboard-title">
+        Welcome {me.username} to <span className="highlighted">App1 🎉</span>
+      </h1>
 
       {/* 👤 User Info Card */}
       <div className="dashboard-card">
-        <div><strong>📧 Email:</strong> {me.email}</div>
-        <div><strong>🏢 Department:</strong> {me.department}</div>
-        <div><strong>🧑‍💼 Role:</strong> {me.role}</div>
-        <div><strong>🆔 ID Number:</strong> {me.idNumber}</div>
-        <div className="fingerprint-status">
-          <strong>🖐️ Fingerprint:</strong>{' '}
-          {me.fingerprint_registered ? (
-            <span className="registered">Registered ✅</span>
-          ) : (
-            <span className="not-registered">Not registered ❌</span>
-          )}
+        <div className="dashboard-info">
+          <p>📧 <strong>Email:</strong> {me.email}</p>
+          <p>🏢 <strong>Department:</strong> {me.department}</p>
+          <p>🧑‍💼 <strong>Role:</strong> {me.role}</p>
+          <p>🆔 <strong>ID Number:</strong> {me.idNumber}</p>
+          <p>🖐️ <strong>Fingerprint:</strong> {me.fingerprint_registered ? 'Registered ✅' : 'Not registered ❌'}</p>
         </div>
       </div>
 
       {/* ✏️ Action Buttons */}
       <div className="dashboard-actions">
         <button className="update-button" onClick={() => setEditing(true)}>✏️ Update Info</button>
+        {!me.fingerprint_registered && (
+          <button className="register-fp-button" onClick={handleFingerprintRegistration}>
+            🖐️ Register Fingerprint
+          </button>
+        )}
       </div>
 
-      {/* 🖐️ Fingerprint Button */}
-      {!me.fingerprint_registered && (
-        <button
-          className="register-fp-button"
-          onClick={handleFingerprintRegistration}
-        >
-          🖐️ Register Fingerprint
-        </button>
-      )}
 
       {/* ✏️ Edit Modal */}
       {editing && (
@@ -214,6 +258,54 @@ useEffect(() => {
           onSave={handleSave}
         />
       )}
+      {/* Floating Chat Button */}
+      <div className="chat-float-button" onClick={() => setChatOpen(!chatOpen)}>
+        {chatOpen ? '╳' : '💬'}
+      </div>
+
+      {/* Floating Chat Panel */}
+      {chatOpen && (
+        <div className="chat-panel">
+          <div className="chat-header">
+            <span> AI Assistant</span>
+            <button className="clear-chat-btn" onClick={() => setChat([])}>🗑 Clear</button>
+          </div>
+
+          <div className="chat-history">
+            {chat.map((entry, idx) => (
+              <div key={idx} className={`chat-msg ${entry.role}`}>
+                <div className="chat-meta">
+                  <strong>{entry.role === 'user' ? 'You' : 'Agent'}</strong>
+                  <span className="chat-time">{entry.time}</span>
+                </div>
+                <div className="chat-content">{entry.content}</div>
+              </div>
+            ))}
+            {loading && (
+              <div className="chat-msg agent">
+                <div className="chat-meta">
+                  <strong>Agent</strong>
+                  <span className="chat-time">typing…</span>
+                </div>
+                <div className="chat-content">...</div>
+              </div>
+            )}
+            <div ref={chatBottomRef} />
+          </div>
+
+          <div className="chat-controls">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+              placeholder="Ask something..."
+            />
+            <button onClick={handleSend}>Send</button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

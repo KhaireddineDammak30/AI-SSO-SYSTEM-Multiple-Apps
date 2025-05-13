@@ -7,6 +7,7 @@ import {
   LineChart, Line,
   ResponsiveContainer
 } from 'recharts';
+import axios from 'axios';
 import '../AdminDashboard.css';
 
 const API              = process.env.REACT_APP_AUTH || 'https://localhost:4000';
@@ -63,6 +64,18 @@ export default function AdminDashboard() {
   const [toast, setToast]     = useState({ msg:'', type:'' });
   const loc                   = useLocation();
   const [lastRefreshed, setLastRefreshed] = useState(null); 
+  // Add Agent State
+  const [agents, setAgents] = useState([]);
+  const [newAgent, setNewAgent] = useState({
+    name: '',
+    description: ''
+  });
+// Load Agents
+  useEffect(() => {
+    axios.get('https://localhost:5000/admin/agents')
+      .then(res => setAgents(res.data))
+      .catch(err => console.error('Failed to fetch agents:', err));
+  }, []);
 
   const loadUsers = useCallback(async () => {
     const r = await fetch(`${API}/admin/users`, {
@@ -207,6 +220,29 @@ export default function AdminDashboard() {
     return Number.isNaN(dt.getTime()) ? '—' : dt.toLocaleString();
   };
 
+  const createAgent = () => {
+    axios.post('https://localhost:5000/admin/agents', newAgent)
+      .then(res => {
+        setAgents([res.data, ...agents]);
+        setNewAgent({ name: '', description: '' });  
+        toastMsg(`✅ Agent "${res.data.name}" created`, 'success');
+      })
+      .catch(err => 
+        toastMsg(`❌ ${err.response?.data?.error || 'Failed to create agent'}`, 'error')
+      );  
+    };
+
+  const deleteAgent = (id) => {
+    if (!window.confirm('Delete this AI agent?')) return;
+    axios.delete(`https://localhost:5000/admin/agents/${id}`)
+      .then(() => {
+        setAgents(agents.filter(a => a.id !== id));
+        toastMsg('🗑️ Agent deleted', 'success');
+      })
+      .catch(err => toastMsg('❌ Failed to delete agent', 'error'))
+  };
+
+
   /* ─── UI ───────────────────────────────────────────────────── */
   if (!me) return <p style={{padding:40}}>⏳ Loading admin data…</p>;
 
@@ -270,6 +306,65 @@ export default function AdminDashboard() {
           })}
         </tbody>
       </table>
+
+      {/* ─────── Agent Management ─────── */}
+      <div className="agent-section">
+        <h2>🧠 AI Agent Management</h2>
+
+        <div className="agent-form-row">
+          <input
+            placeholder="Agent name (e.g., Network)"
+            value={newAgent.name}
+            onChange={e => setNewAgent({ ...newAgent, name: e.target.value })}
+          />
+          <textarea
+            className="agent-description-input"
+            placeholder="Description"
+            value={newAgent.description}
+            onChange={e => setNewAgent({ ...newAgent, description: e.target.value })}
+            rows={2}
+          />
+        
+          <button onClick={createAgent}>➕ Create Agent</button>
+        </div>
+
+        <div className="agent-list">
+          <h3>Existing Agents</h3>
+          {agents.map(agent => {
+            const icons = {
+              network: '🌐',
+              security: '🛡️',
+              cloud: '☁️',
+              maintenance: '🛠️',
+              hr: '👥',
+              finance: '💰',
+              legal: '⚖️'
+            };
+
+            const normalizedName = agent.name.trim().toLowerCase();
+            const icon = icons[normalizedName] || '🤖';
+            const displayName = agent.name
+              .trim()
+              .toLowerCase()
+              .split(' ')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ');
+
+            return (
+              <div key={agent.id} className="agent-item">
+                <div className="agent-icon">{icon}</div>
+                <div className="agent-details">
+                  <strong>{displayName}</strong> – <span className="agent-description">{agent.description}</span>
+                  <div className="agent-prompt">{agent.display_description}</div>
+                </div>
+                <div style={{ alignSelf: 'center' }}>
+                  <button className="delete-button" onClick={() => deleteAgent(agent.id)}>🗑 Delete</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
       {/* ─────── Analytics ─────── */}
       <div className="stats-section" style={{marginTop:48}}>

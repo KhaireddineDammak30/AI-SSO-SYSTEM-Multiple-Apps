@@ -15314,3 +15314,991 @@
   "loginMethod": "password+totp"
 }
 
+{
+  "timestamp": "2025-05-13T08:18:13.404Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T08:18:13.500Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T08:18:27.662Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 243,
+  "tokenTail": "NOSBV8",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T08:51:19.641Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T08:51:19.650Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T08:51:30.401Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T08:51:30.481Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T08:51:39.365Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 245,
+  "tokenTail": "sk90tY",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T09:23:45.369Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T09:23:45.382Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T09:23:56.390Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T09:23:56.471Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T09:24:04.791Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 247,
+  "tokenTail": "eBWqVY",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T09:59:11.560Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T09:59:11.701Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T10:05:52.692Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T10:05:52.768Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T10:06:00.649Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 249,
+  "tokenTail": "plOTdY",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T10:07:00.634Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T10:07:00.703Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T10:07:27.963Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 9,
+  "tokenTail": "_iNPm0",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T10:38:50.687Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T10:38:50.770Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T10:38:58.590Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 11,
+  "tokenTail": "c4ktYM",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T11:00:53.341Z",
+  "context": "LOGOUT",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:01:05.165Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T11:01:05.234Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:01:10.966Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T11:01:11.034Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:01:19.927Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 14,
+  "tokenTail": "Q7SCTQ",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T11:24:31.219Z",
+  "context": "LOGOUT",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:24:51.679Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T11:24:51.766Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:24:59.449Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 17,
+  "tokenTail": "XO8-1A",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T11:29:22.429Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T11:29:22.505Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T11:29:35.217Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 251,
+  "tokenTail": "rV7-aQ",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T12:41:44.058Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T12:41:44.159Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T12:41:52.909Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 253,
+  "tokenTail": "cYgeyc",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T12:42:17.462Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T12:42:17.548Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T12:42:31.376Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 19,
+  "tokenTail": "aefOuA",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T13:13:00.390Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T13:13:00.398Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T13:13:18.283Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T13:13:18.363Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T13:13:30.012Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 255,
+  "tokenTail": "wJDjBY",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T13:38:52.495Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T13:38:52.579Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T13:38:59.338Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 21,
+  "tokenTail": "mZODSo",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T13:49:47.177Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
+{
+  "timestamp": "2025-05-13T13:49:58.873Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "khaireddine",
+  "ip": "127.0.0.1",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T13:49:58.956Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T13:50:09.046Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "f9ba3e4c-6d3a-4d5b-a325-2500ebaf98b5",
+  "username": "khaireddine",
+  "role": "admin",
+  "origin": "https://localhost:3001",
+  "app": "App2",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 257,
+  "tokenTail": "S-ZI8A",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T14:12:01.019Z",
+  "context": "FINGERPRINT_REG_FAIL_TOKEN",
+  "reason": "invalid or expired token",
+  "ip": "::1",
+  "origin": "https://localhost:3000"
+}
+
+{
+  "timestamp": "2025-05-13T14:12:14.821Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T14:12:14.824Z",
+  "context": "LOGIN_FAIL_USER_NOT_FOUND",
+  "uid": null,
+  "identifier": "dammak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:12:32.869Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T14:12:32.944Z",
+  "context": "TOTP_REQUESTED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:13:20.710Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 23,
+  "tokenTail": "jKpMLg",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T14:13:22.296Z",
+  "context": "FINGERPRINT_REG_START",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "app": "App1",
+  "origin": "https://localhost:3000",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "flowSource": "dashboard"
+}
+
+{
+  "timestamp": "2025-05-13T14:14:00.188Z",
+  "context": "FINGERPRINT_REG_VERIFIED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "credentialID": "SBcJuIAS5I75EUKuYVIbiQ",
+  "app": "App1",
+  "origin": "https://localhost:3000",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "flowSource": "dashboard"
+}
+
+{
+  "timestamp": "2025-05-13T14:14:41.937Z",
+  "context": "ADMIN_LOCK_TOGGLE",
+  "by": "khaireddine",
+  "targetId": "35fd541d-1be6-43df-b331-2218aac72d56",
+  "action": "lock",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:14:48.825Z",
+  "context": "ADMIN_LOCK_TOGGLE",
+  "by": "khaireddine",
+  "targetId": "35fd541d-1be6-43df-b331-2218aac72d56",
+  "action": "unlock",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:33.525Z",
+  "context": "LOGOUT",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:42.082Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:42.149Z",
+  "context": "LOGIN_FAIL_WRONG_PASSWORD",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:45.511Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:45.580Z",
+  "context": "LOGIN_FINGERPRINT_REQUIRED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:21:48.497Z",
+  "context": "FINGERPRINT_AUTH_OPTIONS_SENT",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "transports": [
+    "hybrid",
+    "internal"
+  ],
+  "challenge": "jxNA-u7e9lEgAjJnaV_hTXGYVoCsi0ckSEyApM9tGKA"
+}
+
+{
+  "timestamp": "2025-05-13T14:22:28.589Z",
+  "context": "FINGERPRINT_AUTH_OPTIONS_SENT",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "transports": [
+    "hybrid",
+    "internal"
+  ],
+  "challenge": "sonFJdp127o7avCARZ1i4xXR50G24bdIjJnXP3rB_CU"
+}
+
+{
+  "timestamp": "2025-05-13T14:22:39.607Z",
+  "context": "FINGERPRINT_AUTH_SUCCESS",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "loginMethod": "webauthn",
+  "fingerprintUsed": true
+}
+
+{
+  "timestamp": "2025-05-13T14:22:39.612Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 25,
+  "tokenTail": "NDrWtM",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T14:37:49.613Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T14:37:49.692Z",
+  "context": "LOGIN_FINGERPRINT_REQUIRED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T14:37:55.172Z",
+  "context": "FINGERPRINT_AUTH_OPTIONS_SENT",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "transports": [
+    "hybrid",
+    "internal"
+  ],
+  "challenge": "oyyfGElM1x5v2PbKVZ9auIbdfdz4eV6CLQprWAsRflE"
+}
+
+{
+  "timestamp": "2025-05-13T14:38:03.599Z",
+  "context": "FINGERPRINT_AUTH_SUCCESS",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "loginMethod": "webauthn",
+  "fingerprintUsed": true
+}
+
+{
+  "timestamp": "2025-05-13T14:38:03.604Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 26,
+  "tokenTail": "_u6HWg",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T15:08:57.737Z",
+  "context": "LOGIN_GATE_ALLOWED",
+  "identifier": "dammmak",
+  "ip": "127.0.0.1",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp": "2025-05-13T15:08:57.823Z",
+  "context": "LOGIN_FINGERPRINT_REQUIRED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "identifier": "dammmak",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1"
+}
+
+{
+  "timestamp": "2025-05-13T15:09:03.421Z",
+  "context": "FINGERPRINT_AUTH_OPTIONS_SENT",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "transports": [
+    "hybrid",
+    "internal"
+  ],
+  "challenge": "OP3E8STlORy6IvhokH5zDdGGcZya_p6gS_FG6EVilrI"
+}
+
+{
+  "timestamp": "2025-05-13T15:09:16.219Z",
+  "context": "FINGERPRINT_AUTH_SUCCESS",
+  "userId": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "loginMethod": "webauthn",
+  "fingerprintUsed": true
+}
+
+{
+  "timestamp": "2025-05-13T15:09:16.226Z",
+  "context": "LOGIN_ISSUED",
+  "uid": "a0ef3158-4f3e-4f2c-aae7-f041722d1c36",
+  "username": "dammmak",
+  "role": "technician",
+  "origin": "https://localhost:3000",
+  "app": "App1",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "loginCount": 27,
+  "tokenTail": "i_vUZc",
+  "mfaUsed": true,
+  "fingerprintUsed": false,
+  "loginMethod": "password+totp"
+}
+
+{
+  "timestamp": "2025-05-13T15:39:25.101Z",
+  "context": "LOGOUT_FAIL_INVALID_TOKEN",
+  "origin": "https://localhost:4001",
+  "app": "AdminPanel",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "ip": "::1",
+  "error": "jwt expired"
+}
+
