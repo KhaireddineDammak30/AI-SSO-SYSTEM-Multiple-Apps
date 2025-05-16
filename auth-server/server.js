@@ -55,9 +55,12 @@ import { v4 as uuid } from 'uuid';
 import { parse as uuidParse } from 'uuid';
 import fetch     from 'node-fetch';
 import { Buffer } from 'buffer';
-import { logEntry } from '../shared/logger.js';
 import session from 'express-session';
+
+import { logEntry } from '../shared/logger.js';
 import passport from './passport.js'; 
+import adminAppsRouter from './routes/admin-apps.js';
+
 /* ── WebAuthn ─────────────────────────────── */
 import {
   generateRegistrationOptions,
@@ -130,13 +133,24 @@ const MAX_FAILS = 5;             // after 5 bad tries
 /* --- Helper: Map origin → app name -------------------------------- */
 /* ------------------------------------------------------------------ */
 function getAppName(origin) {
-  switch (origin) {
-    case 'https://localhost:3000': return 'App1';
-    case 'https://localhost:3001': return 'App2';
-    case 'https://localhost:4001': return 'AdminPanel';
-    default:                      return origin;
+  if (!origin) return 'unknown';
+
+  try {
+    const url = new URL(origin);
+    const port = url.port;
+
+    const knownApps = {
+      '3000': 'App1',
+      '3001': 'App2',
+      '4001': 'AdminPanel'
+    };
+
+    return knownApps[port] || `App-${port}`;
+  } catch {
+    return origin;
   }
 }
+
 /* ------------------------------------------------------------------ */
 /* --- challenge helpers -------------------------------------------- */
 /* ------------------------------------------------------------------ */
@@ -339,15 +353,33 @@ async function signAndLog(uid, req) {
 /* ------------------------------------------------------------------ */
 const app = express();
 app.use(cors({
-  origin: [
-    'https://localhost:3000', // App1
-    'https://localhost:3001', // App2
-    'https://localhost:4001'  // Admin Panel
-  ],
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // allow requests without origin (e.g., curl)
+
+    try {
+      const url = new URL(origin);
+      const port = parseInt(url.port, 10);
+
+      // ✅ Allow ports between 3000 and 3020 (inclusive)
+      if (port >= 3000 && port <= 3020) {
+        return callback(null, true);
+      }
+
+      // ✅ Always allow admin panel
+      if (port === 4001) {
+        return callback(null, true);
+      }
+
+      return callback(new Error('Not allowed by CORS'));
+    } catch (err) {
+      return callback(new Error('Invalid origin'));
+    }
+  },
   credentials: true,
   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization', 'X-Flow-Source']
 }));
+
 app.use(express.json());
 app.use(helmet());
 app.use(morgan('dev'));
@@ -363,6 +395,9 @@ app.use(session({
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// 👇 Mount admin app management routes
+app.use('/admin/apps', adminGuard, adminAppsRouter);
 
 /* ------------------------------------------------------------------ */
 /* ---------- ROUTES ------------------------------------------------ */

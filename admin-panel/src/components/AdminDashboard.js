@@ -77,6 +77,16 @@ export default function AdminDashboard() {
       .catch(err => console.error('Failed to fetch agents:', err));
   }, []);
 
+  const [apps, setApps] = useState([]);
+  const [newApp, setNewApp] = useState({
+    name: '',
+    port: '',
+    description: ''
+  });
+  const [launchedApps, setLaunchedApps] = useState([]); // Track launched app IDs
+  const [openWindows, setOpenWindows] = useState({});   // Track open window handles by app ID
+
+
   const loadUsers = useCallback(async () => {
     const r = await fetch(`${API}/admin/users`, {
       method: 'GET',
@@ -88,7 +98,20 @@ export default function AdminDashboard() {
     setUsers(data);
     setLastRefreshed(new Date().toLocaleTimeString());
   }, []);
-  
+  // ✅ ADDED: Load apps from backend
+  const loadApps = useCallback(async () => {
+    try {
+      const res = await fetch(`${API}/admin/apps`, {
+        headers: tokenHdr()
+      });
+      if (!res.ok) throw new Error('Failed to load apps');
+      const data = await res.json();
+      setApps(data);
+    } catch (err) {
+      toastMsg('❌ Failed to fetch apps', 'error');
+    }
+  }, []);
+
   /* ─── initial auth + users load ─────────────────────────────── */
   useEffect(() => {
     const qp = new URLSearchParams(loc.search);
@@ -106,6 +129,7 @@ export default function AdminDashboard() {
         if (me.role !== 'admin') throw new Error();
         setMe(me);
         await loadUsers();
+        await loadApps();  // ✅ ADDED
       } catch { kickOut('🚫 You have been logged out. Please login again.'); }
     })();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -130,7 +154,20 @@ export default function AdminDashboard() {
 
   const tokenHdr = () => ({ Authorization:`Bearer ${localStorage.getItem('token')}` });
 
-  
+  const openApp = (app) => {
+    const win = window.open(`https://localhost:${app.port}`, '_blank');
+    setOpenWindows(prev => ({ ...prev, [app.id]: win }));
+  };
+
+  const closeApp = (appId) => {
+    const win = openWindows[appId];
+    if (win && !win.closed) win.close();
+    setOpenWindows(prev => {
+      const updated = { ...prev };
+      delete updated[appId];
+      return updated;
+    });
+  };
 
 
   /* ─── CRUD / auth actions ──────────────────────────────────── */
@@ -242,7 +279,90 @@ export default function AdminDashboard() {
       .catch(err => toastMsg('❌ Failed to delete agent', 'error'))
   };
 
+ // ✅ ADDED: Create app
+  const createApp = async () => {
+    if (!newApp.name || !newApp.port || !newApp.description) {
+      toastMsg('⚠️ Please fill in name, port, and description', 'error');
+      return;
+    }
 
+    toastMsg(`⏳ "${newApp.name}" is being created. This may take a minute...`, 'info'); // ✅ show pre-creation message
+
+    try {
+      const res = await fetch(`${API}/admin/apps`, {
+        method: 'POST',
+        headers: { ...tokenHdr(), 'Content-Type': 'application/json' },
+        body: JSON.stringify(newApp)
+      });
+
+      if (res.status === 409) {
+        toastMsg('⚠️ Port or name already in use', 'error');
+        return;
+      }
+
+      if (!res.ok) {
+        toastMsg('❌ Failed to create app (server error)', 'error');
+        return;
+      }
+
+      const app = await res.json();
+      setApps(prev => [app, ...prev]);
+      setNewApp({ name: '', port: '', description: '' }); // ✅ Clear form
+      toastMsg(`✅ App "${app.name}" created`, 'success'); // ✅ Post-creation message
+
+    } catch (err) {
+      toastMsg('❌ Failed to create app', 'error');
+      console.error(err);
+    }
+  };
+  // Add the launchApp handler
+  const launchApp = async (id) => {
+    const app = apps.find(a => a.id === id);
+    if (!app) return toastMsg('❌ App not found', 'error');
+
+    try {
+      const res = await fetch(`${API}/admin/apps/${id}/launch`, {
+        method: 'POST',
+        headers: tokenHdr()
+      });
+
+      if (!res.ok) throw new Error();
+
+      setLaunchedApps(prev => [...prev, id]);
+      toastMsg(`🚀 "${app.name}" launched`);
+    } catch {
+      toastMsg('❌ Failed to launch app', 'error');
+    }
+  };
+
+
+  // ✅ ADDED: Delete app
+  const deleteApp = async (id) => {
+    if (!id) {
+      toastMsg('❌ Invalid app ID', 'error');
+      return;
+    }
+
+    if (!window.confirm('Delete this app?')) return;
+
+    try {
+      const res = await fetch(`${API}/admin/apps/${id}`, {
+        method: 'DELETE',
+        headers: tokenHdr()
+      });
+
+      if (!res.ok) {
+        toastMsg('❌ Failed to delete app (server error)', 'error');
+        return;
+      }
+
+      setApps(apps.filter(app => app.id !== id));
+      toastMsg('🗑 App deleted');
+    } catch {
+      toastMsg('❌ Failed to delete app', 'error');
+    }
+  };
+ 
   /* ─── UI ───────────────────────────────────────────────────── */
   if (!me) return <p style={{padding:40}}>⏳ Loading admin data…</p>;
 
@@ -363,6 +483,118 @@ export default function AdminDashboard() {
               </div>
             );
           })}
+        </div>
+      </div>
+      {/* ─────── App Management Section ─────── */}
+      <div className="admin-section app-management-section">
+        <h2 className="section-title">💠 App Management</h2>
+
+        {/* App Creation Form */}
+        <div className="app-form">
+          <input
+            className="app-input"
+            placeholder="App name (e.g., Security Hub)"
+            value={newApp.name}
+            onChange={e => setNewApp({ ...newApp, name: e.target.value })}
+          />
+          <input
+            className="app-input"
+            type="number"
+            placeholder="Port (e.g., 3004)"
+            value={newApp.port}
+            onChange={e => setNewApp({ ...newApp, port: e.target.value })}
+          />
+          <textarea
+            className="app-textarea"
+            placeholder="Description"
+            value={newApp.description}
+            onChange={e => setNewApp({ ...newApp, description: e.target.value })}
+            rows={2}
+          />
+          <button 
+            className="app-button create-button"
+            onClick={createApp}
+            disabled={!newApp.name || !newApp.port || !newApp.description}
+          >
+            ➕ Create App
+          </button>
+        </div>
+
+        {/* App List */}
+        <div className="app-list">
+          <h3 className="subsection-title">Registered Apps</h3>
+          {apps.map(app => (
+            <div key={app.id} className="app-item">
+              <div className="app-details">
+                <span className="app-name">{app.name}</span>
+                <span className="app-port">Port: {app.port}</span>
+                <span className="app-description">{app.description}</span>
+                {app.is_fixed && <span className="app-badge">Fixed</span>}
+              </div>
+
+              <div className="app-actions">
+                {app.is_fixed ? (
+                  <a
+                    className="app-visit-button"
+                    href={`https://localhost:${app.port}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    🔗 Open
+                  </a>
+                ) : (
+                  <>
+                    {!launchedApps.includes(app.id) ? (
+                      <>
+                        <button
+                          className="app-launch-button"
+                          onClick={() => launchApp(app.id)}
+                        >
+                          🚀 Launch
+                        </button>
+                        <button
+                          className="app-delete-button"
+                          onClick={() => deleteApp(app.id)}
+                        >
+                          🗑 Delete
+                        </button>
+                      </>
+                    ) : openWindows[app.id] && !openWindows[app.id].closed ? (
+                      <>
+                        <button
+                          className="app-delete-button"
+                          onClick={() => closeApp(app.id)}
+                        >
+                          ❌ Close
+                        </button>
+                        <button
+                          className="app-delete-button"
+                          onClick={() => deleteApp(app.id)}
+                        >
+                          🗑 Delete
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          className="app-visit-button"
+                          onClick={() => openApp(app)}
+                        >
+                          🔗 Open
+                        </button>
+                        <button
+                          className="app-delete-button"
+                          onClick={() => deleteApp(app.id)}
+                        >
+                          🗑 Delete
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

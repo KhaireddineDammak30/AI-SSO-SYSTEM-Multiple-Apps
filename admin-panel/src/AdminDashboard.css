@@ -407,3 +407,209 @@
   transform: scale(1.15);
   transition: transform 0.2s ease;
 }
+
+
+/* ───────── App Management Section ───────── */
+
+.app-management-section {
+  margin-top: 48px;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.app-management-section:hover {
+  background-color: #f9fafb;
+}
+
+.app-management-section h2.section-title {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6366f1; /* soft indigo */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ───────── Form Inputs ───────── */
+
+.app-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.app-input,
+.app-textarea {
+  flex: 1 1 200px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app-textarea {
+  resize: none;
+  min-height: 50px;
+}
+
+.app-input:focus,
+.app-textarea:focus {
+  outline: none;
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* ───────── Buttons ───────── */
+
+.app-button {
+  padding: 10px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 0.95rem;
+  height: 42px;
+}
+
+.app-button:hover {
+  background-color: #2563eb;
+}
+
+.app-launch-button {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 42px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.app-launch-button:hover {
+  background-color: #d1fae5;
+}
+
+.app-delete-button {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 42px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.app-delete-button:hover {
+  background-color: #fecaca;
+}
+
+.app-visit-button {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  padding: 10px 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.app-visit-button:hover {
+  background-color: #bae6fd;
+}
+
+.app-visit-button.disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ───────── App List ───────── */
+
+.app-list {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.subsection-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.app-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 1rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+}
+
+.app-item:hover {
+  background-color: #f4f3ff;
+  box-shadow: 0 1px 6px rgba(59, 130, 246, 0.1);
+}
+
+.app-details {
+  flex-grow: 1;
+  display: flex;
+  gap: 16px;
+  font-size: 0.95rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.app-port {
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.app-description {
+  font-style: italic;
+  color: #4b5563;
+}
+
+.app-badge {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.app-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
